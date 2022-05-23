@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 
 
-import Loading from '../Shared/Loading';
-
-const Signup = () => {
+const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
 
     const [handlesinupwithgoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    console.log(gUser);
     const [updateProfile, updating, Uperror] = useUpdateProfile(auth);
 
 
@@ -31,11 +31,7 @@ const Signup = () => {
     let from = location.state?.from?.pathname || "/";
 
 
-    useEffect( () =>{
-      if (user) {
-          navigate(from, { replace: true });
-      }
-  }, [from, navigate]);
+
 
   if (loading || gLoading ||updating) {
       return <Loading></Loading>
@@ -159,4 +155,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default SignUp;
