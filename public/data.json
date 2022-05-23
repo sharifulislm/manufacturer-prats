@@ -1,0 +1,83 @@
+[
+    {
+      "_id": "1",
+      "quantity": "2",
+      "images": "http://blog.getdistributors.com/wp-content/uploads/2014/06/consumer-electronic.jpg",
+      "price": 225,
+      "name": "Deirdre Rogers",
+      "supplierName": "Booker Hogan",
+      "availableQuantity": "50",
+      "description": "PERMADYNE Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto. "
+    },
+    {
+      "_id": "2",
+      "quantity": "2",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTamaYaeJbg750iGVd4vxM1GKUgWiK6mrE-AvVKR2yrj0V7m7hteupu930JT8or0yyHDCI&usqp=CAU",
+      "price": 225,
+      "name": "Ruiz Delacruz",
+      "supplierName": "Lourdes Best",
+      "availableQuantity": "50",
+      "description": "ROBOID Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "3",
+      "quantity": "5",
+      "images": "https://www.innoxamc.com/images/content/img_business01.jpg",
+      "price": 225,
+      "name": "Latonya Strickland",
+      "supplierName": "Terri Hooper",
+      "availableQuantity": "4",
+      "description": "MENBRAIN Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "4",
+      "quantity": "4",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqobncRmBJBeJY9ORchNzrQmRi7MqMDN9iKQ&usqp=CAU",
+      "price": 350,
+      "name": "Adrienne Hendrix",
+      "supplierName": "Dunlap Hernandez",
+      "availableQuantity": "90",
+      "description": "ZOINAGELorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "5",
+      "quantity": "4",
+      "images": "https://amigos-themes.com/profix/assets/images/service/item-3.jpg",
+      "price": 25,
+      "name": "Martha Reynolds",
+      "supplierName": "Farmer Robbins",
+      "availableQuantity": "40",
+      "description": "ENJOLA Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "6",
+      "quantity": "6",
+      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+      "price": 350,
+      "name": "Doreen Rodriguez",
+      "supplierName": "Hurley Bradshaw",
+      "description": "LUNCHPOD Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "7",
+      "quantity": "8",
+      "availableQuantity": "50",
+      "images": "https://amigos-themes.com/profix/assets/images/service/motherboard-3.jpg",
+      "price": 350,
+      "name": "Mara French",
+      "supplierName": "Matthews Hammond",
+
+      "description": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    },
+    {
+      "_id": "8",
+      "quantity": "9",
+      "availableQuantity": "9",
+      "images": "https://amigos-themes.com/profix/assets/images/service/service.jpg",
+      "price": 350,
+      "name": "Roy Carlson",
+      "supplierName": "Sonja Flynn",
+    
+      "description": "XIIX Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
+    }
+  ]
