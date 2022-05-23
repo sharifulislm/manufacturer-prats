@@ -1,0 +1,17 @@
+.Notfound{
+
+    background-image: url("./imges/error.png");
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
+
+}
+.back-btn{
+    margin: auto;
+    align-items: center;
+    text-decoration: none;
+    background: brown;
+    color: white;
+    padding: 10px;
+    border-radius: 26px;
+}

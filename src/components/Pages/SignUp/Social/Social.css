@@ -1,0 +1,9 @@
+button.btn.btn-socialicon.w-50.mx-auto.d-block.mb-2 {
+    background: #F7681E;
+    border-radius: 7px;
+    color: white;
+    font-weight: 900;
+}
+svg {
+    font-size: 23px !important;
+}

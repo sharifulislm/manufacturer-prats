@@ -1,0 +1,16 @@
+.benner-box {
+    background-image: url("../images/vdalph-1.png");
+    background-repeat: no-repeat;
+    height:  600px;
+    width: 100%;
+
+}
+.carosel-box{
+    width: 100%;
+    height: 600%;
+}
+.w-50.benner-content.mx-auto {
+    background: #70809096;
+    padding: 25px;
+    border-radius: 20px;
+}
