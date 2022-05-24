@@ -30,8 +30,9 @@ const SignUp = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-
-
+    if (user||gUser) {
+      navigate(from, { replace: true });
+  }
 
   if (loading || gLoading ||updating) {
       return <Loading></Loading>

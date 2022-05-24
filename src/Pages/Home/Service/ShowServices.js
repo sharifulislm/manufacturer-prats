@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ShowServices = ({services}) => {
     const { _id,description,name,images,price,supplierName,quantity,availableQuantity} =services;
+
+    const navitate =useNavigate();
+    const navigateServiceId = _id => {
+      navitate(`/purchase/${_id}`);
+    }
   
     return (
         <div class="card card-compact w-96 bg-base-100 shadow-xl">
@@ -22,7 +28,7 @@ const ShowServices = ({services}) => {
         
           <h6> {description.slice(0, 75)}...</h6>
           <div class="card-actions justify-end">
-            <button class="btn text-white btn-primary m-auto">purchase</button>
+            <button onClick={()=> navigateServiceId(_id)} class="btn text-white btn-primary m-auto">purchase</button>
           </div>
         </div>
       </div>
