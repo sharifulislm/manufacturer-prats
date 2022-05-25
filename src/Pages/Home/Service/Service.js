@@ -3,10 +3,10 @@ import ShowServices from './ShowServices';
 
 const Service = () => {
 const [ service , setService] = useState([]);
-console.log(service);
+// console.log(service);
 
 useEffect(() => {
- fetch('data.json')
+ fetch('http://localhost:5000/service')
  .then(res=> res.json())
  .then(data => setService(data))
 

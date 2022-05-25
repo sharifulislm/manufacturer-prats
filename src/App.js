@@ -18,7 +18,7 @@ function App() {
 <Routes>
 <Route path='/' element={<Home></Home>}></Route>
 <Route path='home' element={<Home></Home>}></Route>
-<Route path='Purchase/:id' element={<Purchase></Purchase>}></Route>
+<Route path="Purchase/:serviceId" element={<Purchase></Purchase>}></Route>
 {/* <Route path="Payment/:id" element={<Payment></Payment>}></Route> */}
 <Route path='signUp' element={<SignUp></SignUp>}></Route>
 <Route path='Login' element={<Login></Login>}></Route>
