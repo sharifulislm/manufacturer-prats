@@ -1,8 +1,10 @@
 
+import { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 import Loading from '../Loading/Loading';
 
 
@@ -23,16 +25,18 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
-      // const [token] = useToken(user || gUser);
+      const [token] = useToken(user || gUser);
 
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    if (user||gUser) {
-      navigate(from, { replace: true });
-  }
+    useEffect( () =>{
+      if (token) {
+          navigate(from, { replace: true });
+      }
+  }, [token,from, navigate])
 
   if (loading || gLoading ||updating) {
       return <Loading></Loading>
@@ -48,7 +52,7 @@ const SignUp = () => {
      await createUserWithEmailAndPassword(data.email, data.password)
       await updateProfile({ displayName:data.name });
       console.log('profile is update');
-      navigate('/appointment');
+   
     }
     return (
         <div className='flex h-screen justify-center items-center'>

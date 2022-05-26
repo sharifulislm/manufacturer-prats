@@ -1,9 +1,10 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 import Loading from '../Loading/Loading';
 
 
@@ -29,9 +30,9 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, errorrest] = useSendPasswordResetEmail(
       auth
     );
-    console.log(sending);
+  
    
-
+    const [token] = useToken(user || gUser);
 
 
     let signInError;
@@ -39,10 +40,11 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-
-    if (user||gUser) {
-        navigate(from, { replace: true });
-    }
+    useEffect( () =>{
+      if (token) {
+          navigate(from, { replace: true });
+      }
+  }, [token,from, navigate])
 
   if (loading || gLoading) {
       return <Loading></Loading>

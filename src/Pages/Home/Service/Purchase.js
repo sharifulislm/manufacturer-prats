@@ -43,20 +43,53 @@ const handlePlaceOrder = event => {
         
     }
     console.log(order);
-    axios.post('http://localhost:5000/order', order)
-    .then(response => {
-        const {data} = response;
-        if(data.insertedId){
-            toast('your order is booked');
-            event.target.reset();
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json',
+        
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      },
+      body: JSON.stringify(order)
+  })
+  .then(res =>res.json())
+  .then(inserted =>{
+      if(inserted.insertedId){
+          toast.success('Doctor added successfully')
+          event.target.reset();
+    
+         
+      }
+      else{
+          toast.error('Failed to add the doctor');
+          event.target.reset();
+      }
+  })
+}
+
+
+//     axios.post('http://localhost:5000/order',{ 
+//     method: 'POST',
+//     headers: {
+//         'content-type': 'application/json',
+      
+//         authorization: `Bearer ${localStorage.getItem('accessToken')}`
+//     },
+//     body: JSON.stringify(order)
+// })
+//     .then(response => {
+//         const {data} = response;
+//         if(data.insertedId){
+//             toast('your order is booked');
+//             event.target.reset();
          
            
-        }
+//         }
      
-    })
+//     })
 
 
-}
+// }
 
     return (
         <div class="hero min-h-screen ">
