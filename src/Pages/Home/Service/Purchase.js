@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import useProduct from '../../../Hooks/useProduct';
-import Loading from '../../Share/Loading/Loading';
+
 
 
 
@@ -15,22 +15,22 @@ const Purchase = () => {
 const {serviceId}=useParams();
 const [service]=useProduct(serviceId)
 const [user] = useAuthState(auth);
-const [adminLoading, setAdminLoading] = useState({});
-const [names, setName] = useState('')
-console.log(names);
+const [quantityErorr, setQuantityErorr] = useState('');
+// const [quantityvalue,setQuantityvalue ] = useState('');
+const [quantitys, setquantitys] = useState('')
+const { description,name,images,price,availableQuantity,quantity} =service;
 
-const { description,name,images,price,supplierName,availableQuantity,quantity} =service;
-console.log(adminLoading);
+// if(quantitys <= 100){
+//   setQuantityErorr('error');
+// }else if (quantitys > availableQuantity){
+//   setQuantityErorr('error 2');
+// }
+// else{
+//   setQuantityvalue(quantitys);
+// }
 
 
-const handleQuantity = event => {
-    const quantitys = event.target.quantity.value;
-    setAdminLoading(quantitys)
-    console.log(quantitys);
-}
-const handlePlaceOrder = event => {
- 
- 
+const handlePlaceOrder = event => { 
     event.preventDefault();
     const order = {
         email:user.email,
@@ -38,7 +38,7 @@ const handlePlaceOrder = event => {
         sericeId: serviceId,
         address: event.target.addrsess.value,
         phone: event.target.phone.value,
-        quantity: names
+        quantity:quantitys
       
         
     }
@@ -46,7 +46,6 @@ const handlePlaceOrder = event => {
     axios.post('http://localhost:5000/order', order)
     .then(response => {
         const {data} = response;
-         setAdminLoading(false);
         if(data.insertedId){
             toast('your order is booked');
             event.target.reset();
@@ -79,13 +78,13 @@ const handlePlaceOrder = event => {
           <div className='w-2/4'>
               <h1 className='text-xl text-center'>Purchase</h1>
  
-              <form onSubmit={handleQuantity}>
-              <input   onChange={ (event) => setName(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text" name='quantity' placeholder='quantity'/>
-                  </form>
               <form className='' onSubmit={handlePlaceOrder}>
 
-            
+                
+
+              <input   onChange={ (event) => setquantitys(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text"  placeholder='quantity'/>
               <br></br>
+          <p>{quantityErorr}</p>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="email" value={user?.email}  name='email' placeholder='email' required readOnly />
@@ -96,7 +95,14 @@ const handlePlaceOrder = event => {
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='phone' placeholder='phone' required />
                 <br/>
-                <input className='btn btn-primary' type="submit" value=" Order" />
+                
+                <input
+className="btn btn-accent   w-full max-w-xs  "
+type="submit"
+value="Place Order"
+/>
+              
+           
 
             </form>
 

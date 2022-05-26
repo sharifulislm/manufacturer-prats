@@ -8,6 +8,7 @@ const ShowServices = ({services}) => {
     const navigateServiceId = _id => {
       navitate(`/purchase/${_id}`);
     }
+    
   
     return (
         <div class="card card-compact w-96 bg-base-100 shadow-xl">
