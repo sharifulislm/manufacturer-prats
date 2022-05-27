@@ -2,9 +2,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../firebase.init';
+import useMyorder from '../Hooks/useMyorder';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [order] =useMyorder([])
   console.log(user);
     return (
         <div class="drawer drawer-mobile">
@@ -28,7 +30,7 @@ const Dashboard = () => {
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link to="/dashbord/myprofile">My Profile</Link></li>
-            <li><Link to="/dashbord/myorders">My Orders</Link></li>
+            <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
         <>
         <li><Link to="/dashbord/user">ALL Users</Link></li>

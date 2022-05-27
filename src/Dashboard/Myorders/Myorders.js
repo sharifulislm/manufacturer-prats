@@ -1,53 +1,58 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+// import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import Loading from '../../Pages/Share/Loading/Loading';
+// import auth from '../../firebase.init';
+import useMyorder from '../../Hooks/useMyorder';
+// import Dashboard from '../Dashboard';
+
+
 
 const Myorders = () => {
-    const {data: Orders, isLoading, refetch} = useQuery('doctors', ()=> fetch('  http://localhost:5000/order' , {
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res => res.json()));
 
-     if(isLoading){
-         return <Loading></Loading>
-     }
+const [order] =useMyorder([])
+
     return (
         <div>
-        <h1> my Orders {Orders.length} </h1>
-        {/* const { description,name,images,price,availableQuantity,quantity} =service; */}
+    
 
         <div class="overflow-x-auto">
 <table class="table w-full">
 
 <thead>
   <tr>
-    <th></th>
+    <th>Order</th>
     <th>Name</th>
-    <th>Price</th>
-    <th> </th>
-    <th>Treatment </th>
+    <th>Address</th>
+  
+    <th>quantity </th>
+    <th> Phone</th>
+    <th> email</th>
     <th>Payment </th>
   </tr>
 </thead>
 <tbody>
-    {/* {
-        Orders.map((a, index) => 
+    {
+        order.map((a, index) => 
             <tr key={a._id}>
             <th>{index + 1}</th>
-            <th>{a.patientName}</th>
-            <td>{a.date}</td>
-            <td>{a.slot}</td>
-            <td>{a.treatment}</td>
+            <th>{a.name}</th>
+            <td>{a.address}</td>
+            <td>{a.quantity}</td>
+            <td>{a.phone}</td>
+            <td>{a.email}</td>
+            <td><button>delete</button></td>
+            
             {(a.price && !a.paid) && <Link to={`/dashbord/Payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
             {(a.price && a.paid) && <div>
                                     <p><span className='text-success'>Paid</span></p>
-                                    <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
+                                    <p>Transaction id: <span className='text-success'></span></p>
                                 </div>}
           </tr>
             )
-    } */}
+            
+    }
+
+
 
 
  
@@ -56,7 +61,13 @@ const Myorders = () => {
 
 </tbody>
 </table>
+<div>
+  {/* {
+    order.map(orders =><Dashboard key={orders._id} orders={orders}></Dashboard>)
+  } */}
 </div>
+</div>
+
         
     </div>
     );

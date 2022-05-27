@@ -15,7 +15,7 @@ const Purchase = () => {
 const {serviceId}=useParams();
 const [service]=useProduct(serviceId)
 const [user] = useAuthState(auth);
-const [quantityErorr, setQuantityErorr] = useState('');
+// const [quantityErorr, setQuantityErorr] = useState();
 // const [quantityvalue,setQuantityvalue ] = useState('');
 const [quantitys, setquantitys] = useState('')
 const { description,name,images,price,availableQuantity,quantity} =service;
@@ -30,11 +30,12 @@ const { description,name,images,price,availableQuantity,quantity} =service;
 // }
 
 
+
 const handlePlaceOrder = event => { 
     event.preventDefault();
     const order = {
+        name:user.displayName,
         email:user.email,
-        service: service.name,
         sericeId: serviceId,
         address: event.target.addrsess.value,
         phone: event.target.phone.value,
@@ -43,53 +44,21 @@ const handlePlaceOrder = event => {
         
     }
     console.log(order);
-    fetch('http://localhost:5000/order', {
-      method: 'POST',
-      headers: {
-          'content-type': 'application/json',
-        
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
-      },
-      body: JSON.stringify(order)
-  })
-  .then(res =>res.json())
-  .then(inserted =>{
-      if(inserted.insertedId){
-          toast.success('Doctor added successfully')
-          event.target.reset();
+    axios.post('http://localhost:5000/order', order)
+    .then(response => {
+        const {data} = response;
+        if(data.insertedId){
+            toast('your order is booked');
+            event.target.reset();
+        }
+    })
     
-         
-      }
-      else{
-          toast.error('Failed to add the doctor');
-          event.target.reset();
-      }
-  })
 }
 
 
-//     axios.post('http://localhost:5000/order',{ 
-//     method: 'POST',
-//     headers: {
-//         'content-type': 'application/json',
-      
-//         authorization: `Bearer ${localStorage.getItem('accessToken')}`
-//     },
-//     body: JSON.stringify(order)
-// })
-//     .then(response => {
-//         const {data} = response;
-//         if(data.insertedId){
-//             toast('your order is booked');
-//             event.target.reset();
-         
-           
-//         }
-     
-//     })
 
 
-// }
+
 
     return (
         <div class="hero min-h-screen ">
@@ -117,12 +86,12 @@ const handlePlaceOrder = event => {
 
               <input   onChange={ (event) => setquantitys(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text"  placeholder='quantity'/>
               <br></br>
-          <p>{quantityErorr}</p>
+          {/* <p>{quantityErorr}</p> */}
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="email" value={user?.email}  name='email' placeholder='email' required readOnly />
                 <br/>
-                <input className='input mb-2 input-bordered w-full max-w-xs' type="text"   name='service' placeholder='service' required />
+                <input className='input mb-2 input-bordered w-full max-w-xs' type="text"   name='price' placeholder='service' required readOnly />
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text"   name='addrsess' placeholder='addrsess' required  autoComplete='off'/>
                 <br/>
