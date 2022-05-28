@@ -18,12 +18,14 @@ const Allusers = ({user,refetch}) => {
         return res.json()
       })
       .then (data => {
-       if(data.modifiledCount > 0) {
-    
+        if(data){
+          
            refetch();
-        toast.success('Successfully made an admin');
-       }
-      })
+            toast.success('Successfully made an admin');
+        }
+      
+      }
+      )
     }
     return (
         <tr>
