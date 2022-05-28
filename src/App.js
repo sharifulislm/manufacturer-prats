@@ -1,5 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Share/Footer/Footer';
@@ -14,6 +15,7 @@ import MyProfile from './Dashboard/MyProfile/MyProfile';
 import AddReview from './Dashboard/AddReview/AddReview';
 import Myorders from './Dashboard/Myorders/Myorders';
 import Makeadmin from './Dashboard/Makeadmin';
+import Allusers from './Dashboard/Allusers';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -33,6 +35,7 @@ function App() {
 <Route path='addreview' element={<AddReview></AddReview>}></Route>
 <Route path='myorders' element={<Myorders></Myorders>}></Route>
 <Route path='makeadmin' element={<Makeadmin></Makeadmin>}></Route>
+<Route path='allusers' element={<Allusers></Allusers>}></Route>
 
 
 </Route>

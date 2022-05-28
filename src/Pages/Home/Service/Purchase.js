@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
@@ -20,14 +20,21 @@ const [quantityvalue,setQuantityvalue ] = useState('');
 const [quantitys, setquantitys] = useState('')
 const { description,name,images,price,availableQuantity,quantity} =service;
 
-if(quantitys <= 100){
-  setQuantityErorr('error');
-}else if (quantitys > availableQuantity){
-  setQuantityErorr('error 2');
-}
-else{
-  setQuantityvalue(quantitys);
-}
+useEffect(()=> {
+  if(quantitys > availableQuantity ){
+
+    return setQuantityErorr('error1');
+  }else if(quantitys <= 100){
+    return setQuantityErorr('errr 2')
+  }else if(quantitys => 100){
+     setQuantityErorr('avial')
+     return setQuantityvalue(quantitys)
+  }else if(quantitys <= availableQuantity){
+    setQuantityErorr('avail 2')
+    setQuantityvalue(quantitys)
+  }
+
+},[quantitys])
 
 
 
@@ -86,7 +93,7 @@ const handlePlaceOrder = event => {
 
               <input   onChange={ (event) => setquantitys(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text"  placeholder='quantity'/>
               <br></br>
-          <p>{quantityErorr}</p>
+          <p className='text-red-500'>{quantityErorr}</p>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="email" value={user?.email}  name='email' placeholder='email' required readOnly />
