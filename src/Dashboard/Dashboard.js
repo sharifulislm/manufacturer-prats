@@ -16,12 +16,7 @@ const Dashboard = () => {
         <div class="drawer-content ">
           {/* <!-- Page content here --> */}
          
-          <div class="avatar m-auto mx-auto text-center ">
-  <div class="w-16 rounded-full">
-    <img src={user?.photoURL} />
-  </div>
-  <h1 className='text-2xl font-bold  mt-3 ml-2'> <span className='text-blue-500'>{user?.displayName}</span> Welcome to your Dashboard </h1>
-</div>
+ 
          
           <Outlet></Outlet>
        
@@ -31,7 +26,11 @@ const Dashboard = () => {
           <label for="my-drawer-2" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-            <li><Link to="/dashbord/myprofile">My Profile</Link></li>
+            <li><Link to="/dashbord/myprofile">My Profile    <div class="avatar">
+    <div class="w-10  rounded-full">
+      <img src={user.photoURL} />
+    </div>
+  </div> </Link></li>
             <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
        {

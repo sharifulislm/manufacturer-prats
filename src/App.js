@@ -11,14 +11,18 @@ import Navbar from './Pages/Share/Navbar/Navbar';
 import { ToastContainer} from 'react-toastify';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Dashboard from './Dashboard/Dashboard';
-import MyProfile from './Dashboard/MyProfile/MyProfile';
-import AddReview from './Dashboard/AddReview/AddReview';
 import Myorders from './Dashboard/Myorders/Myorders';
 import Makeadmin from './Dashboard/Makeadmin';
+import MyProfile from './Dashboard/MyProfile';
 import Allusers from './Dashboard/Allusers';
 import AddProduct from './Dashboard/AddProduct';
 import ManageProducts from './Dashboard/ManageProducts';
 import ManageOrdders from './Dashboard/ManageOrdders';
+import AddReview from './Dashboard/AddReview';
+import Reveiws from './Pages/Home/Reveiws/Reveiws';
+
+
+import BussinessSummary from './Pages/Home/BussinessSummary/BussinessSummary';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -32,6 +36,8 @@ function App() {
 <Routes>
 <Route path='/' element={<Home></Home>}></Route>
 <Route path='home' element={<Home></Home>}></Route>
+<Route path='review' element={<Reveiws></Reveiws>}></Route>
+<Route path='BussinessSummary' element={<BussinessSummary></BussinessSummary>}></Route>
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 
 <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>

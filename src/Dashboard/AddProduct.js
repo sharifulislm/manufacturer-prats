@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
-    const handlePlaceOrder = event => { 
+    const handleaddProducts = event => { 
         event.preventDefault();
         const Products = {
             name:event.target.name.value,
@@ -36,7 +36,7 @@ const AddProduct = () => {
     
     return (
         <div>
-               <form className='' onSubmit={handlePlaceOrder}>
+               <form className='' onSubmit={handleaddProducts}>
         
                   <input className='input mb-2 input-bordered w-full max-w-xs' type="text" name='name' placeholder='name' />
                   <br/>
