@@ -1,10 +1,30 @@
-# Getting Started with Create React App
+# parts manufacturer
+ #parts manufacturer [Projects link](https://teacheracademy-20bb9.web.app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
+# This project created with 
+- Html
+- css
+- tailwindcss
+- javascrept 
+- React 
+- React Route
+- Firebase 
+- mongodb
+- etc 
 
-## Available Scripts
+# this my best projects
+<p> It is the first file a person will see when they encounter your project, so it should be fairly brief but detailed
+ It will make your project standout from a bunch of others. Also be sure your project is good too.</p>
+ <p>It will help you focus on what your project needs to deliver and how.
+It will improve your writing skills, just as Friedrich Nietzsche said:
+A good writer possesses not only his own spirit but also the spirit of his friends. </p>
+<p>While working on a project, keep in mind that you will need other developers to understand your code and what it does. So accompanying it with an extra guide will be really helpful.</p>
+- this projects is dynamic 
+- this projects is dynamic 
+- You can login to this project
 
-In the project directory, you can run:
+
 
 ### `npm start`
 

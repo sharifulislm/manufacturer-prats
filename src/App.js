@@ -13,6 +13,8 @@ import Dashboard from './Dashboard/Dashboard';
 import MyProfile from './Dashboard/MyProfile/MyProfile';
 import AddReview from './Dashboard/AddReview/AddReview';
 import Myorders from './Dashboard/Myorders/Myorders';
+import Makeadmin from './Dashboard/Makeadmin';
+// import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
 
@@ -25,10 +27,12 @@ function App() {
 <Routes>
 <Route path='/' element={<Home></Home>}></Route>
 <Route path='home' element={<Home></Home>}></Route>
-<Route path='dashbord' element={<Dashboard/>}>
+<Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
+
 <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
 <Route path='addreview' element={<AddReview></AddReview>}></Route>
 <Route path='myorders' element={<Myorders></Myorders>}></Route>
+<Route path='makeadmin' element={<Makeadmin></Makeadmin>}></Route>
 
 
 </Route>

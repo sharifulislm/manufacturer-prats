@@ -15,19 +15,19 @@ const Purchase = () => {
 const {serviceId}=useParams();
 const [service]=useProduct(serviceId)
 const [user] = useAuthState(auth);
-// const [quantityErorr, setQuantityErorr] = useState();
-// const [quantityvalue,setQuantityvalue ] = useState('');
+const [quantityErorr, setQuantityErorr] = useState('');
+const [quantityvalue,setQuantityvalue ] = useState('');
 const [quantitys, setquantitys] = useState('')
 const { description,name,images,price,availableQuantity,quantity} =service;
 
-// if(quantitys <= 100){
-//   setQuantityErorr('error');
-// }else if (quantitys > availableQuantity){
-//   setQuantityErorr('error 2');
-// }
-// else{
-//   setQuantityvalue(quantitys);
-// }
+if(quantitys <= 100){
+  setQuantityErorr('error');
+}else if (quantitys > availableQuantity){
+  setQuantityErorr('error 2');
+}
+else{
+  setQuantityvalue(quantitys);
+}
 
 
 
@@ -39,7 +39,7 @@ const handlePlaceOrder = event => {
         sericeId: serviceId,
         address: event.target.addrsess.value,
         phone: event.target.phone.value,
-        quantity:quantitys
+        quantity:quantityvalue
       
         
     }
@@ -86,12 +86,12 @@ const handlePlaceOrder = event => {
 
               <input   onChange={ (event) => setquantitys(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text"  placeholder='quantity'/>
               <br></br>
-          {/* <p>{quantityErorr}</p> */}
+          <p>{quantityErorr}</p>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="email" value={user?.email}  name='email' placeholder='email' required readOnly />
-                <br/>
-                <input className='input mb-2 input-bordered w-full max-w-xs' type="text"   name='price' placeholder='service' required readOnly />
+             
+          
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text"   name='addrsess' placeholder='addrsess' required  autoComplete='off'/>
                 <br/>

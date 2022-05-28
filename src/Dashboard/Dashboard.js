@@ -33,9 +33,8 @@ const Dashboard = () => {
             <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
         <>
-        <li><Link to="/dashbord/user">ALL Users</Link></li>
-        <li><Link to="/dashbord/adddoctor">add Doctor</Link></li>
-        <li><Link to="/dashbord/mangeDoctor">Manage Doctors</Link></li>
+        <li><Link to="/dashbord/makeadmin">Make Admin</Link></li>
+       
        </>
           </ul>
         
