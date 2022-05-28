@@ -23,10 +23,11 @@ import Reveiws from './Pages/Home/Reveiws/Reveiws';
 
 
 import BussinessSummary from './Pages/Home/BussinessSummary/BussinessSummary';
+import Contact from './Pages/Home/Contact/Contact';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
-
+// firebase deploy
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
 <Route path='/' element={<Home></Home>}></Route>
 <Route path='home' element={<Home></Home>}></Route>
 <Route path='review' element={<Reveiws></Reveiws>}></Route>
+<Route path='contact' element={<Contact></Contact>}></Route>
 <Route path='BussinessSummary' element={<BussinessSummary></BussinessSummary>}></Route>
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 

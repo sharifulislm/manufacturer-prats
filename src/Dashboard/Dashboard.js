@@ -4,12 +4,14 @@ import { Link, Outlet } from 'react-router-dom';
 import auth from '../firebase.init';
 import useAdmin from '../Hooks/useAdmin';
 import useMyorder from '../Hooks/useMyorder';
+import useUsers from '../Hooks/useUsers';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [users] =useUsers([])
   const [order] =useMyorder([])
   const [admin] = useAdmin(user)
-  console.log(user);
+  console.log(users);
     return (
         <div class="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -26,11 +28,7 @@ const Dashboard = () => {
           <label for="my-drawer-2" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-            <li><Link to="/dashbord/myprofile">My Profile    <div class="avatar">
-    <div class="w-10  rounded-full">
-      <img src={user.photoURL} />
-    </div>
-  </div> </Link></li>
+            <li><Link to="/dashbord/myprofile">My Profile </Link></li>
             <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
        {
