@@ -16,6 +16,9 @@ import AddReview from './Dashboard/AddReview/AddReview';
 import Myorders from './Dashboard/Myorders/Myorders';
 import Makeadmin from './Dashboard/Makeadmin';
 import Allusers from './Dashboard/Allusers';
+import AddProduct from './Dashboard/AddProduct';
+import ManageProducts from './Dashboard/ManageProducts';
+import ManageOrdders from './Dashboard/ManageOrdders';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -36,7 +39,9 @@ function App() {
 <Route path='myorders' element={<Myorders></Myorders>}></Route>
 <Route path='makeadmin' element={<Makeadmin></Makeadmin>}></Route>
 <Route path='allusers' element={<Allusers></Allusers>}></Route>
-
+<Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+<Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
+<Route path='ManageProducts' element={<ManageProducts></ManageProducts>}></Route>
 
 </Route>
 <Route path="Purchase/:serviceId" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>

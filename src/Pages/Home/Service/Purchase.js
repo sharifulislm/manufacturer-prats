@@ -88,12 +88,10 @@ const handlePlaceOrder = event => {
               <h1 className='text-xl text-center'>Purchase</h1>
  
               <form className='' onSubmit={handlePlaceOrder}>
-
                 
-
               <input   onChange={ (event) => setquantitys(event.target.value) }  className='input mb-2 input-bordered w-full max-w-xs' type="text"  placeholder='quantity'/>
               <br></br>
-          <p className='text-red-500'>{quantityErorr}</p>
+             <p className='text-red-500'>{quantityErorr}</p>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
                 <br/>
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="email" value={user?.email}  name='email' placeholder='email' required readOnly />
@@ -105,14 +103,8 @@ const handlePlaceOrder = event => {
                 <input className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='phone' placeholder='phone' required />
                 <br/>
                 
-                <input
-className="btn btn-accent   w-full max-w-xs  "
-type="submit"
-value="Place Order"
-/>
+                <input className="btn btn-accent w-full max-w-xs  " type="submit" value="Place Order"/>
               
-           
-
             </form>
 
 

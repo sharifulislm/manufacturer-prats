@@ -1,16 +1,18 @@
-import React from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import auth from '../../firebase.init';
-import useMyorder from '../../Hooks/useMyorder';
-// import Dashboard from '../Dashboard';
 
-
-
-const Myorders = () => {
-
-const [order] =useMyorder([])
-
+const ManageOrdders = () => {
+    const [ service , setService] = useState([]);
+    console.log(service);
+    
+    useEffect(() => {
+     fetch('  http://localhost:5000/allorder')
+     .then(res=> res.json())
+     .then(data => setService(data))
+    
+    
+    
+    } ,[])
     return (
         <div>
     
@@ -32,7 +34,7 @@ const [order] =useMyorder([])
 </thead>
 <tbody>
     {
-        order.map((a, index) => 
+        service.map((a, index) => 
             <tr key={a._id}>
             <th>{index + 1}</th>
             <th>{a.name}</th>
@@ -71,4 +73,4 @@ const [order] =useMyorder([])
     );
 };
 
-export default Myorders;
+export default ManageOrdders;
