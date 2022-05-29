@@ -24,6 +24,7 @@ import Reveiws from './Pages/Home/Reveiws/Reveiws';
 
 import BussinessSummary from './Pages/Home/BussinessSummary/BussinessSummary';
 import Contact from './Pages/Home/Contact/Contact';
+import Profile from './Dashboard/Profile';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -39,6 +40,7 @@ function App() {
 <Route path='home' element={<Home></Home>}></Route>
 <Route path='review' element={<Reveiws></Reveiws>}></Route>
 <Route path='contact' element={<Contact></Contact>}></Route>
+
 <Route path='BussinessSummary' element={<BussinessSummary></BussinessSummary>}></Route>
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 
@@ -50,6 +52,7 @@ function App() {
 <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
 <Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
 <Route path='ManageProducts' element={<ManageProducts></ManageProducts>}></Route>
+<Route path='Profiles' element={<Profile></Profile>}></Route>
 
 </Route>
 <Route path="Purchase/:serviceId" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>

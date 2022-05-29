@@ -2,12 +2,13 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
-import useUsers from '../Hooks/useUsers';
+
+
 
 const MyProfile = () => {
     const[user]=useAuthState(auth)
     const email =user.email;
-    const[users]=useUsers([]);
+
  
     
     const handlereview = event => { 
@@ -63,20 +64,7 @@ const MyProfile = () => {
             </form>
           
       </div>
-      <div className='w-6/12'>
-      <div class="card w-96 bg-base-100 shadow-xl">
-  <figure class="px-10 pt-10">
-    <img src={users.photoURL} alt="Shoes" class="rounded-xl" />
-  </figure>
-  <div class="card-body items-center text-center">
-    <h2 class="card-title">{users.name}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
-      </div>
+
      
 
       </div>
