@@ -20,6 +20,9 @@ const [quantityvalue,setQuantityvalue ] = useState('');
 const [quantitys, setquantitys] = useState('')
 const { description,name,images,price,availableQuantity,quantity} =service;
 
+
+const totalPrice  = quantityvalue * price;
+
 useEffect(()=> {
   if(quantitys > availableQuantity ){
 
@@ -44,6 +47,7 @@ const handlePlaceOrder = event => {
         name:user.displayName,
         email:user.email,
         sericeId: serviceId,
+        price:totalPrice,
         address: event.target.addrsess.value,
         phone: event.target.phone.value,
         quantity:quantityvalue

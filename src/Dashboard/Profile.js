@@ -18,7 +18,7 @@ const Profile = () => {
         <figure>
         <div class="avatar">
   <div class="w-36 mt-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={a.photoURL} />
+    <img src={a?.photoURL || a?.photoURs} />
   </div>
 </div>
 
@@ -26,10 +26,11 @@ const Profile = () => {
         <div class="card-body">
      
         <Link className='text-center text-blue-700 font-bold' to="/dashbord/myprofile">Update Profile  </Link>
+        <small className='text-center'>{a.EditBio}</small>
           <h2 class="card-title text-center m-auto">Name: {a.name}</h2>
-          <h2 class="card-title m-auto">email: {a.email}</h2>
           <p className='m-auto font-bold'>education:{a.education}</p>
           <p className='m-auto'> <span className='font-bold'>about :</span> {a.about}</p>
+          <h2 class="card-title m-auto">email: {a.email}</h2>
           <div class="card-actions justify-end">
           
           </div>

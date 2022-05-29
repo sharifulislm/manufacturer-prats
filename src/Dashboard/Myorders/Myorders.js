@@ -26,7 +26,8 @@ const [order] =useMyorder([])
   
     <th>quantity </th>
     <th> Phone</th>
-    <th> email</th>
+    <th> Total Price</th>
+    {/* <th> email</th> */}
     <th>Payment </th>
   </tr>
 </thead>
@@ -39,10 +40,11 @@ const [order] =useMyorder([])
             <td>{a.address}</td>
             <td>{a.quantity}</td>
             <td>{a.phone}</td>
-            <td>{a.email}</td>
-            <td><button>delete</button></td>
+            <td>{a.price}</td>
+            {/* <td>{a.email}</td> */}
+            {/* <td><button>delete</button></td> */}
             
-            {(a.price && !a.paid) && <Link to={`/dashbord/Payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+            {(a.price && !a.paid) && <Link to={`/dashbord/Payment/${a._id}`}><button className='btn btn-xs btn-success mt-3'>pay</button></Link>}
             {(a.price && a.paid) && <div>
                                     <p><span className='text-success'>Paid</span></p>
                                     <p>Transaction id: <span className='text-success'></span></p>
