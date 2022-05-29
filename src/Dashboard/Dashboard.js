@@ -7,7 +7,8 @@ import useMyorder from '../Hooks/useMyorder';
 
 
 
-const Dashboard = () => {
+const Dashboard = ({a}) => {
+  console.log(a);
   const [user] = useAuthState(auth);
 
   const [order] =useMyorder([])
@@ -34,14 +35,15 @@ const Dashboard = () => {
           
 <div class="avatar pl-1">
   <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={user.photoURL} />
+    <img src={a?.photoURLs||user?.photoURL}/>
   </div>
   </div></Link></li>
             {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
-            <li><div class="indicator">
-  <span class="indicator-item badge badge-secondary mt-6 pl-1">{order.length}</span> 
-  <Link to="/dashbord/myorders">My Orders</Link>
-</div></li>
+            <li>
+            <Link to="/dashbord/myorders"> <div class="indicator">
+  
+ 
+</div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
             
        {

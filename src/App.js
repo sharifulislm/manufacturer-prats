@@ -25,6 +25,7 @@ import Reveiws from './Pages/Home/Reveiws/Reveiws';
 import BussinessSummary from './Pages/Home/BussinessSummary/BussinessSummary';
 import Contact from './Pages/Home/Contact/Contact';
 import Profile from './Dashboard/Profile';
+import Payment from './Dashboard/Payment/Payment';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -53,6 +54,7 @@ function App() {
 <Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
 <Route path='ManageProducts' element={<ManageProducts></ManageProducts>}></Route>
 <Route path='Profiles' element={<Profile></Profile>}></Route>
+<Route path='Payment/:id' element={<Payment></Payment>}></Route>
 
 </Route>
 <Route path="Purchase/:serviceId" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
