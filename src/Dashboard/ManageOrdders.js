@@ -6,7 +6,7 @@ const ManageOrdders = () => {
     console.log(service);
     
     useEffect(() => {
-     fetch('  http://localhost:5000/allorder')
+     fetch('  https://rocky-thicket-49136.herokuapp.com/allorder')
      .then(res=> res.json())
      .then(data => setService(data))
     

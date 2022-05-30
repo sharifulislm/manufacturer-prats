@@ -6,7 +6,7 @@ const Reveiws = () => {
     // console.log(service);
     
     useEffect(() => {
-     fetch('http://localhost:5000/reviews')
+     fetch('https://rocky-thicket-49136.herokuapp.com/reviews')
      .then(res=> res.json())
      .then(data => setReveiw(data))
     
@@ -22,7 +22,7 @@ const Reveiws = () => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 '>
             {
-                reveiw.map(reveiws=><ShowReveiw key={reveiws._id} reveiws={reveiws}></ShowReveiw>)
+                reveiw.slice(0, 3).map(reveiws=><ShowReveiw key={reveiws._id} reveiws={reveiws}></ShowReveiw>)
             }
             </div>
         </div>

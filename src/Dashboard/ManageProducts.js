@@ -6,7 +6,7 @@ import Modal from './Modal';
 
 const ManageProducts = () => {
     const [deleteingprosucts ,setDeleteingProducts]= useState(null);
-    const {data: products, isLoading, refetch} = useQuery('products', ()=> fetch('http://localhost:5000/service' , {
+    const {data: products, isLoading, refetch} = useQuery('products', ()=> fetch('https://rocky-thicket-49136.herokuapp.com/service' , {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

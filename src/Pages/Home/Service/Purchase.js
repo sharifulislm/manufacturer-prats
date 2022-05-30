@@ -55,7 +55,7 @@ const handlePlaceOrder = event => {
         
     }
     console.log(order);
-    axios.post('http://localhost:5000/order', order)
+    axios.post('https://rocky-thicket-49136.herokuapp.com/order', order)
     .then(response => {
         const {data} = response;
         if(data.insertedId){

@@ -43,7 +43,7 @@ const Dashboard = ({a}) => {
             <Link to="/dashbord/myorders"> <div class="indicator">
   
  
-</div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
+         </div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
             <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
             
        {

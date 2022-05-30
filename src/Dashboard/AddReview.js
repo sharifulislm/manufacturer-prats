@@ -17,7 +17,7 @@ const AddReview = () => {
           
             
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://rocky-thicket-49136.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

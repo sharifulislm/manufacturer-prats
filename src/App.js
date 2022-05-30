@@ -26,6 +26,8 @@ import BussinessSummary from './Pages/Home/BussinessSummary/BussinessSummary';
 import Contact from './Pages/Home/Contact/Contact';
 import Profile from './Dashboard/Profile';
 import Payment from './Dashboard/Payment/Payment';
+import Blog from './Pages/Home/Blog/Blog';
+import RequireNurmaluser from './Pages/RequireAuth/RequireNurmaluser';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -41,14 +43,15 @@ function App() {
 <Route path='home' element={<Home></Home>}></Route>
 <Route path='review' element={<Reveiws></Reveiws>}></Route>
 <Route path='contact' element={<Contact></Contact>}></Route>
+<Route path='blog' element={<Blog></Blog>}></Route>
 
 <Route path='BussinessSummary' element={<BussinessSummary></BussinessSummary>}></Route>
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 
 <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
-<Route path='addreview' element={<AddReview></AddReview>}></Route>
-<Route path='myorders' element={<Myorders></Myorders>}></Route>
-<Route path='makeadmin' element={<Makeadmin></Makeadmin>}></Route>
+<Route path='addreview' element={<RequireNurmaluser><AddReview></AddReview></RequireNurmaluser>}></Route>
+<Route path='myorders' element={<RequireAuth><Myorders></Myorders></RequireAuth>}></Route>
+<Route path='makeadmin' element={<RequireAuth></RequireAuth>}></Route>
 <Route path='allusers' element={<Allusers></Allusers>}></Route>
 <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
 <Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
