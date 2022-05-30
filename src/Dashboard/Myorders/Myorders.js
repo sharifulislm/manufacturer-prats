@@ -47,7 +47,7 @@ const [order] =useMyorder([])
             {(a.price && !a.paid) && <Link to={`/dashbord/Payment/${a._id}`}><button className='btn btn-xs btn-success mt-3'>pay</button></Link>}
             {(a.price && a.paid) && <div>
                                     <p><span className='text-success'>Paid</span></p>
-                                    <p>Transaction id: <span className='text-success'></span></p>
+                                    <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
                                 </div>}
           </tr>
             )

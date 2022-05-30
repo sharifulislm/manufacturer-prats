@@ -28,12 +28,12 @@ useEffect(()=> {
 
     return setQuantityErorr('error1');
   }else if(quantitys <= 100){
-    return setQuantityErorr('errr 2')
+    return setQuantityErorr('min arror ')
   }else if(quantitys => 100){
-     setQuantityErorr('avial')
+     setQuantityErorr('available')
      return setQuantityvalue(quantitys)
   }else if(quantitys <= availableQuantity){
-    setQuantityErorr('avail 2')
+    setQuantityErorr('mix error')
     setQuantityvalue(quantitys)
   }
 
