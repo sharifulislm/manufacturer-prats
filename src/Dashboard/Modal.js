@@ -1,26 +1,52 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
-const Modal = (deleteingprosucts,setDeleteingProducts,refetch) => {
-    const {name,_id}=deleteingprosucts;
-    const hendleDelete = (_id) => {
-        fetch(`https://rocky-thicket-49136.herokuapp.com/prodct/${_id}`, {
-            method: 'DELETE',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    console.log(data);
-                    toast.success(`products: ${name} is deleted.`)
-                    setDeleteingProducts(null)
-                    refetch();
+const Modal = ({service,setService,}) => {
+    const {name,_id}=service;
+
+    const hendleDelete = id =>{
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if(proceed){
+            console.log('deleting user with id, ', id);
+            const url = `http://localhost:5000/service/${id}`;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                  'content-type': 'application/json',
+                
+                  authorization: `Bearer ${localStorage.getItem('accessToken')}`
+              },
+             
+            })
+            .then(res => res.json())
+            .then(data =>{
+                if(data.deletedCount > 0){
+                    console.log('deleted');
+                    const remaining = service.filter(user => user._id !== id);
+                    setService(remaining);
                 }
             })
+        }
     }
+
+    // const hendleDelete = (_id) => {
+    //     fetch(`http://localhost:5000/service/${_id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.deletedCount) {
+    //                 console.log(data);
+    //                 toast.success(`products: ${name} is deleted.`)
+    //                 setDeleteingProducts(null)
+    //                 refetch();
+    //             }
+    //         })
+    // }
 
     return (
         <div>

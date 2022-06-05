@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import './navbar.css';
 
 
 const Navbar = () => {
@@ -20,19 +21,22 @@ const Navbar = () => {
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/review">Review</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/about">About</Link></li>
+        
               <li><Link to="/dashbord/Profiles">Dashboard</Link></li>
              
               {/* {
                 user &&   
               } */}
-              <li> {user ?<button onClick={Logout} className="btn btn-ghost">Sign Out</button> :<Link to="/Login">Login</Link> }</li>
+              <li className='mr-5'> {user ?<button onClick={Logout} className="btn btn-ghost">Sign Out</button>
+                  
+
+              :<Link to="/Login">Login</Link> }</li>
   </>
 
 
     return (
         <div className="navbar bg-base-100">
-        <div className="navbar-start">
+        <div className="navbar">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -40,13 +44,27 @@ const Navbar = () => {
             <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                   {menuItems}
             </ul>
+    
           </div>
           <a className="btn btn-ghost normal-case text-xl">parts manufacturer</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
            {menuItems}
+
           </ul>
+       {
+         user && <>
+            <label tabindex="0" class="btn  btn-ghost btn-circle avatar">
+       
+       <div class="w-10  rounded-full">
+         <img className='w-full' src={user?.photoURL} />
+       </div>
+     </label>
+         </>
+       }
+          
+    
         </div>
         <div className='navbar-end'>
         <label tabindex="0" for="my-drawer-2" className="btn btn-ghost lg:hidden">

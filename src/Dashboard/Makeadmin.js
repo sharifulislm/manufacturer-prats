@@ -4,7 +4,7 @@ import Loading from '../Pages/Share/Loading/Loading';
 import Allusers from './Allusers';
 
 const Makeadmin = () => {
-    const{data: users,isLoading,refetch} =useQuery('users', () => fetch('https://rocky-thicket-49136.herokuapp.com/user',{
+    const{data: users,isLoading,refetch} =useQuery('users', () => fetch('http://localhost:5000/user',{
         method: 'GET',
         headers: {
           authorization: `Bearer ${localStorage.getItem('accessToken')}`

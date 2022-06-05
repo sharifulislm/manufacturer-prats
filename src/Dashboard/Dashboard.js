@@ -8,11 +8,12 @@ import useMyorder from '../Hooks/useMyorder';
 
 
 const Dashboard = ({a}) => {
-  console.log(a);
+
   const [user] = useAuthState(auth);
 
   const [order] =useMyorder([])
   const [admin] = useAdmin(user)
+
 
     return (
         <div class="drawer drawer-mobile">
@@ -30,21 +31,26 @@ const Dashboard = ({a}) => {
           <label for="my-drawer-2" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-           
             <li><Link to="/dashbord/Profiles">Profile 
           
-<div class="avatar pl-1">
-  <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={a?.photoURLs||user?.photoURL}/>
-  </div>
-  </div></Link></li>
-            {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
-            <li>
-            <Link to="/dashbord/myorders"> <div class="indicator">
-  
- 
-         </div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
-            <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
+          <div class="avatar pl-1">
+            <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={a?.photoURLs||user?.photoURL}/>
+            </div>
+             </div></Link></li>
+           
+        {
+          !admin && <>
+          
+                      {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
+                      <li>
+                      <Link to="/dashbord/myorders"> <div class="indicator">
+            
+           
+                   </div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
+                      <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
+          </>
+        }
             
        {
          admin && 

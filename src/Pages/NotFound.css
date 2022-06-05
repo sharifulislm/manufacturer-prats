@@ -1,0 +1,7 @@
+.Notfound{
+    background-image: url('https://w3hubs.com/wp-content/uploads/2020/06/Bootstrap-Error-Page.png');
+    background-repeat: no-repeat;
+   background-position: cover;
+   width: 100%;
+   height: 80%;
+}

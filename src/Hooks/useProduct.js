@@ -3,7 +3,7 @@ import  { useEffect, useState } from 'react';
 const useProduct = serviceId => {
     const[service,setService] =useState({})
     useEffect(() => {
-        const url = `https://rocky-thicket-49136.herokuapp.com/purchase/${serviceId}`;
+        const url = `http://localhost:5000/purchase/${serviceId}`;
         console.log(url);
         fetch(url)
         .then(res=> res.json())

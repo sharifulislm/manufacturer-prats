@@ -14,6 +14,7 @@ const ShowReveiw = ({reveiws}) => {
         <div class="card-body items-center text-center">
           <h2 class="card-title">{reveiws.name}</h2>
           <p>{reveiws.description}</p>
+          <img className='w-6 bg-red-300 ' src={reveiws.revice} alt="" />
          
         </div>
       </div>

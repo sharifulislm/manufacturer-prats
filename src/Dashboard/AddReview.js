@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
 const AddReview = () => {
+
+
+
     const[user]=useAuthState(auth)
     console.log(user.photoURL);
     const handlereview = event => { 
@@ -13,11 +16,12 @@ const AddReview = () => {
             email:user.email,
             photoURL:user.photoURL,
             product:event.target.product.value,
+            revice:event.target.revice.value,
             description:event.target.description.value
           
             
         }
-        fetch('https://rocky-thicket-49136.herokuapp.com/review', {
+        fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -49,6 +53,9 @@ const AddReview = () => {
            <br/>
            <input className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='product' placeholder='Product name' />
            <br/>
+           <input className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='revice' placeholder='Rveiw star' />
+             
+ <br></br>
            <textarea className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='description' placeholder='description' />
            <br/>
            

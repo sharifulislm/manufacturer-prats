@@ -25,16 +25,12 @@ const totalPrice  = quantityvalue * price;
 
 useEffect(()=> {
   if(quantitys > availableQuantity ){
-
-    return setQuantityErorr('error1');
-  }else if(quantitys <= 100){
-    return setQuantityErorr('min arror ')
-  }else if(quantitys => 100){
-     setQuantityErorr('available')
-     return setQuantityvalue(quantitys)
-  }else if(quantitys <= availableQuantity){
-    setQuantityErorr('mix error')
-    setQuantityvalue(quantitys)
+    return setQuantityErorr('sorry not availabe');
+  }else if(quantitys <= quantity){
+    return setQuantityErorr('minimum quantity');
+  }else if(quantitys > 100){
+      setQuantityErorr('')
+      setQuantityvalue(quantitys)
   }
 
 },[quantitys])
@@ -55,7 +51,7 @@ const handlePlaceOrder = event => {
         
     }
     console.log(order);
-    axios.post('https://rocky-thicket-49136.herokuapp.com/order', order)
+    axios.post('http://localhost:5000/order', order)
     .then(response => {
         const {data} = response;
         if(data.insertedId){
@@ -75,15 +71,14 @@ const handlePlaceOrder = event => {
         <div class="hero min-h-screen ">
         <div class="hero-content flex-col lg:flex-row">
         <div class="card card-side bg-base-100 shadow-xl w-2/4">
-  <figure><img className='' src={images} alt="" /></figure>
+ <div className='w-1/2'> <figure><img  src={images} alt="" /></figure></div>
   <div class="card-body ">
     <h2 class="card-title">{name}</h2>
     <h2 class="card-title">{price}</h2>
-    <h5>Quantity {quantity}</h5>
+    <h5>minimum Quantity: {quantity}</h5>
     <h5> Available Quantity : {availableQuantity}</h5>
 
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Watch</button>
     </div>
   </div>
 </div>

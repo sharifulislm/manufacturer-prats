@@ -126,7 +126,7 @@ const Login = () => {
   </label>
 
 </div>
-<button
+<button className='text-blue-500'
         onClick={async () => {
           await sendPasswordResetEmail(email);
           alert('Sent email');

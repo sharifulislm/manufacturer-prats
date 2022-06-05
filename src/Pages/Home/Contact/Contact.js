@@ -22,7 +22,7 @@ const Contact = () => {
 
     return (
         <div  className="hero min-h-screen text-black">
-  <div className="hero-overlay bg-white"></div>
+ 
   <div className="hero-content text-center  text-neutral-content">
 
    <form className='frombox' onSubmit={sendEmail} >

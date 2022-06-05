@@ -1,83 +1,80 @@
 [
     {
-      "_id": "1",
-      "quantity": "2",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+
+      "minquantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20201221/14713215675fe06c21b1750.jpg",
       "price": 225,
       "name": "Deirdre Rogers",
-      "supplierName": "Booker Hogan",
-      "availableQuantity": "50",
+      "availableQuantity": "500",
       "description": "PERMADYNE Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto. "
     },
     {
-      "_id": "2",
-      "quantity": "2",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+
+      "quantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20210106/3275723795ff52838b0fef.jpg",
       "price": 225,
       "name": "Ruiz Delacruz",
-      "supplierName": "Lourdes Best",
-      "availableQuantity": "50",
+   
+      "availableQuantity": "5000",
       "description": "ROBOID Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "3",
-      "quantity": "5",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+
+      "quantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20201223/19286211815fe2c3ce2f537.jpg",
       "price": 225,
       "name": "Latonya Strickland",
-      "supplierName": "Terri Hooper",
-      "availableQuantity": "4",
+  
+      "availableQuantity": "500",
       "description": "MENBRAIN Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "4",
-      "quantity": "4",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+   
+      "quantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20201221/14713215675fe06c21b1750.jpg",
       "price": 350,
       "name": "Adrienne Hendrix",
-      "supplierName": "Dunlap Hernandez",
-      "availableQuantity": "90",
+
+      "availableQuantity": "400",
       "description": "ZOINAGELorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "5",
-      "quantity": "4",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+     
+      "quantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20211220/41721892761c08ac0616d6.jpg",
       "price": 25,
       "name": "Martha Reynolds",
-      "supplierName": "Farmer Robbins",
-      "availableQuantity": "40",
+
+      "availableQuantity": "4000",
       "description": "ENJOLA Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "6",
-      "quantity": "6",
-      "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
+ 
+      "quantity": "100",
+      "images": "https://www.sincoole.com/Uploads/20200702/6618141855efdce500c5e6.jpg",
       "price": 350,
       "name": "Doreen Rodriguez",
-      "supplierName": "Hurley Bradshaw",
+   
       "description": "LUNCHPOD Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "7",
-      "quantity": "8",
-      "availableQuantity": "50",
-      "images": "https://amigos-themes.com/profix/assets/images/service/motherboard-3.jpg",
+  
+      "quantity": "100",
+      "availableQuantity": "5000",
+      "images": "https://www.sincoole.com/Uploads/20211102/9480829056181010c53e44.jpg",
       "price": 350,
       "name": "Mara French",
-      "supplierName": "Matthews Hammond",
+    
 
       "description": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     },
     {
-      "_id": "8",
-      "quantity": "9",
-      "availableQuantity": "9",
+   
+      "quantity": "100",
+      "availableQuantity": "1000",
       "images": "https://amigos-themes.com/profix/assets/images/service/service.jpg",
       "price": 350,
       "name": "Roy Carlson",
-      "supplierName": "Sonja Flynn",
-    
       "description": "XIIX Lorem ipsum, dolor sit amet consectetur adipisicing elit. A rerum exercitationem ipsum voluptatibus magni, optio architecto. Sint voluptatum consequatur eveniet delectus, quasi quaerat similique doloribus numquam fugit facilis eius architecto."
     }
   ]

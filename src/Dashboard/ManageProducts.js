@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Pages/Share/Loading/Loading';
 import ProductRow from './ProductRow';
-import Modal from './Modal';
+// import Modal from './Modal';
 
 const ManageProducts = () => {
-    const [deleteingprosucts ,setDeleteingProducts]= useState(null);
-    const {data: products, isLoading, refetch} = useQuery('products', ()=> fetch('https://rocky-thicket-49136.herokuapp.com/service' , {
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res => res.json()));
+    // const [deleteingprosucts ,setDeleteingProducts]= useState([]);
+    const [ serviceS , setService] = useState(null);
+    const {data: service, isLoading, refetch} = useQuery('service', ()=> fetch('http://localhost:5000/service' , {
+      headers: {
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+  }).then(res => res.json()));
 
-     if(isLoading){
-         return <Loading></Loading>
-     }
+   if(isLoading){
+       return <Loading></Loading>
+   }
+
     return (
         <div>
-        <h2 className='text-center text-2xl'> mange Doctor {products.length}</h2>
+        <h2 className='text-center text-2xl'> mange Doctor {service.length}</h2>
 
         <div class="overflow-x-auto">
 <table class="table w-full">
@@ -35,9 +37,10 @@ const ManageProducts = () => {
 </thead>
 <tbody>
   {
-      products.map((product,index) => <ProductRow key={product._id}
-      product={product} refetch={refetch} 
-       index={index} setDeleteingdoctor={setDeleteingProducts}></ProductRow> )
+      service.map((service,index) => <ProductRow key={service._id}
+      service={service} 
+      refetch={refetch}
+       index={index} setService={setService}></ProductRow> )
   }
 
   </tbody>
@@ -45,12 +48,12 @@ const ManageProducts = () => {
 
 
 </div>
-{deleteingprosucts && <Modal
-deleteingprosucts={deleteingprosucts}
-refetch={refetch}
-setDeleteingProducts={setDeleteingProducts}
+{/* {service && <Modal
+service={service}
+
+setService={setService}
 >
-</Modal>}
+</Modal>} */}
         
     </div>
     );

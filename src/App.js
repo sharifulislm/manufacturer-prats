@@ -28,6 +28,7 @@ import Profile from './Dashboard/Profile';
 import Payment from './Dashboard/Payment/Payment';
 import Blog from './Pages/Home/Blog/Blog';
 import RequireNurmaluser from './Pages/RequireAuth/RequireNurmaluser';
+import NotFound from './Pages/NotFound';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -35,24 +36,25 @@ import RequireNurmaluser from './Pages/RequireAuth/RequireNurmaluser';
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto px-12">
+    <div className="max-w-7xl mx-auto px-12 bacgroud-all">
  <Navbar></Navbar>
 
 <Routes>
 <Route path='/' element={<Home></Home>}></Route>
 <Route path='home' element={<Home></Home>}></Route>
 <Route path='review' element={<Reveiws></Reveiws>}></Route>
-<Route path='contact' element={<Contact></Contact>}></Route>
+<Route path='contact' element={<RequireAuth><Contact></Contact></RequireAuth>}></Route>
 <Route path='blog' element={<Blog></Blog>}></Route>
 
 <Route path='BussinessSummary' element={<BussinessSummary></BussinessSummary>}></Route>
+
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 
 <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
 <Route path='addreview' element={<RequireNurmaluser><AddReview></AddReview></RequireNurmaluser>}></Route>
-<Route path='myorders' element={<RequireAuth><Myorders></Myorders></RequireAuth>}></Route>
-<Route path='makeadmin' element={<RequireAuth></RequireAuth>}></Route>
-<Route path='allusers' element={<Allusers></Allusers>}></Route>
+<Route path='myorders' element={<RequireAuth><RequireNurmaluser><Myorders></Myorders></RequireNurmaluser></RequireAuth>}></Route>
+<Route path='makeadmin' element={<RequireAuth><Makeadmin></Makeadmin></RequireAuth>}></Route>
+<Route path='allusers' element={<RequireAuth><Allusers></Allusers></RequireAuth>}></Route>
 <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
 <Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
 <Route path='ManageProducts' element={<ManageProducts></ManageProducts>}></Route>
@@ -64,6 +66,7 @@ function App() {
 {/* <Route path="Payment/:id" element={<Payment></Payment>}></Route> */}
 <Route path='signUp' element={<SignUp></SignUp>}></Route>
 <Route path='Login' element={<Login></Login>}></Route>
+<Route path="*" element={<NotFound></NotFound>}></Route>
 
 </Routes>
 
