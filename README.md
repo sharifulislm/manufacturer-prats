@@ -1,6 +1,17 @@
 # parts manufacturer
  #parts manufacturer [Projects link](https://parts-manufacturer-fa964.web.app/).
 
+
+<h1> Prats Manufacturer full-stack Projects</h1>
+         
+-	User can log in Registration(Signup)reset Password. Signout, email verification, and also sign in with google 
+-	Users can Order with minimum or maximum quantity. 
+-	The user can also pay for his order
+-	 and after paying the order user can add a review for this product
+-	 Admin can add a product, and also can make admin,
+-	 and delete orders whose orders are not paid. 
+Projects Linke: Live_project || gitHubClienSide || github serverside
+
  
 # This project created with 
 - Html
