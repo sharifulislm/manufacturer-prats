@@ -36,8 +36,9 @@ import NotFound from './Pages/NotFound';
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto px-12 bacgroud-all">
+    <div className="">
  <Navbar></Navbar>
+ <div className='max-w-7xl mx-auto px-12 bacgroud-all'>
 
 <Routes>
 <Route path='/' element={<Home></Home>}></Route>
@@ -70,8 +71,10 @@ function App() {
 
 </Routes>
 
-<Footer></Footer>
+
 <ToastContainer />
+</div>
+<Footer></Footer>
 
     </div>
   );
