@@ -12,7 +12,7 @@ const CardBos = () => {
      </h2>
     <p className='text-xl'>Don not hesitate to contact us.</p>
     <div class="card-actions justify-end">
-    <h1>  <button class="btn btn-primary text-white mr-8">Request for quote</button>
+    <h1>  <button class="btn btn-primary text-white mr-8">Request for quote</button>  
     <Link to="/contact"><button class="btn btn-black text-white"> Contact us</button> </Link> </h1>
     </div>
   </div>

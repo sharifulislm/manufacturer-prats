@@ -71,7 +71,7 @@ const AddReview = () => {
  
         <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
          <br></br>
-           <textarea className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='description' placeholder='feedback' />
+           <textarea className='input mb-2 input-bordered w-full max-w-xs m-4' type="text"  name='description' placeholder='feedback' />
            <br/>
            
            <input className="btn btn-accent w-full max-w-xs  " type="submit" value="Add Review"/>
