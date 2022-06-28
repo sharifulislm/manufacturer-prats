@@ -1,6 +1,8 @@
 import React from 'react';
+import StarRaTing from './StarRaTing';
 
 const ShowReveiw = ({reveiws}) => {
+
   
     return (
         <div class="card w-96 bg-base-100 shadow-xl">
@@ -14,7 +16,7 @@ const ShowReveiw = ({reveiws}) => {
         <div class="card-body items-center text-center">
           <h2 class="card-title">{reveiws.name}</h2>
           <p>{reveiws.description}</p>
-          <img className='w-6 bg-red-300 ' src={reveiws.revice} alt="" />
+          <StarRaTing reveiws={reveiws}></StarRaTing>
          
         </div>
       </div>

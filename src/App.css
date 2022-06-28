@@ -5,6 +5,22 @@
 
 
 }
+/* start starranting css  */
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color:#FBBF24;
+}
+.off {
+  color: #ccc;
+}
+
+
+/* end starranting css  */
 
 .App-logo {
   height: 40vmin;

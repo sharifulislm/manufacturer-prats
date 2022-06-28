@@ -29,6 +29,7 @@ import Payment from './Dashboard/Payment/Payment';
 import Blog from './Pages/Home/Blog/Blog';
 import RequireNurmaluser from './Pages/RequireAuth/RequireNurmaluser';
 import NotFound from './Pages/NotFound';
+// import StarRating from './Dashboard/StarRating';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
 
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="">
  <Navbar></Navbar>
+
  <div className='max-w-7xl mx-auto px-12 bacgroud-all'>
 
 <Routes>
@@ -73,6 +75,7 @@ function App() {
 
 
 <ToastContainer />
+
 </div>
 <Footer></Footer>
 
