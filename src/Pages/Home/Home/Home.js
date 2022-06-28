@@ -12,8 +12,11 @@ import Service from '../Service/Service';
 
 const Home = () => {
     return (
-        <div className='container'>
+        <div className=''>
             <Banner></Banner>
+            <div className='max-w-7xl mx-auto px-12  '>
+
+          
             <Service></Service>
             <BussinessSummary></BussinessSummary>
             <CardBos></CardBos>
@@ -21,7 +24,7 @@ const Home = () => {
             <Titile></Titile>
             <Contact></Contact>
           
-            
+            </div>
         </div>
     );
 };

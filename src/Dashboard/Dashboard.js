@@ -16,7 +16,7 @@ const Dashboard = ({a}) => {
 
 
     return (
-        <div class="drawer drawer-mobile">
+        <div class="drawer drawer-mobile max-w-7xl mx-auto px-12">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
           {/* <!-- Page content here --> */}
