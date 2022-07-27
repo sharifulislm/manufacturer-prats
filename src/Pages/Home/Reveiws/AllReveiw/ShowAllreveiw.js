@@ -1,7 +1,8 @@
 import React from 'react';
-import StarRaTing from './StarRaTing';
+import StarRaTing from '../StarRaTing';
 
-const ShowReveiw = ({reveiws}) => {
+
+const ShowAllreveiw = ({reveiws}) => {
     
   
     return (
@@ -23,4 +24,4 @@ const ShowReveiw = ({reveiws}) => {
     );
 };
 
-export default ShowReveiw;
+export default ShowAllreveiw;

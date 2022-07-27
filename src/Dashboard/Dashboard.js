@@ -38,9 +38,7 @@ const Dashboard = ({a}) => {
               <img src={a?.photoURLs||user?.photoURL}/>
             </div>
              </div></Link></li>
-           
-        {
-          !admin && <>
+      <>
           
                       {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
                       <li>
@@ -50,10 +48,9 @@ const Dashboard = ({a}) => {
                    </div> My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
                       <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
           </>
-        }
+      
             
-       {
-         admin && 
+    
          <>
          <li><Link to="/dashbord/makeadmin">Make Admin {admin.length}</Link></li>
          <li><Link to="/dashbord/addproduct">add product {admin.length}</Link></li>
@@ -61,7 +58,7 @@ const Dashboard = ({a}) => {
          <li><Link to="/dashbord/ManageProducts">Manage Products {admin.length}</Link></li>
         
         </>
-       }
+   
           </ul>
         
         </div>

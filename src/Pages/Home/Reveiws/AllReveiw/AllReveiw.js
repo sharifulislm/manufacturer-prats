@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import ShowReveiw from './ShowReveiw';
+import ShowAllreveiw from './ShowAllreveiw';
 
-const Reveiws = () => {
+
+const AllReveiw = () => {
     const [ reveiw , setReveiw] = useState([]);
     // console.log(service);
     
@@ -22,11 +23,11 @@ const Reveiws = () => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 '>
             {
-                reveiw.slice(0, 3).map(reveiws=><ShowReveiw key={reveiws._id} reveiws={reveiws}></ShowReveiw>)
+                reveiw.map(reveiws=><ShowAllreveiw key={reveiws._id} reveiws={reveiws}></ShowAllreveiw>)
             }
             </div>
         </div>
     );
 };
 
-export default Reveiws;
+export default AllReveiw;

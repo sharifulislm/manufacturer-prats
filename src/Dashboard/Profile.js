@@ -30,10 +30,42 @@ const Profile = () => {
      
         <Link className='text-center text-blue-700 font-bold' to="/dashbord/myprofile">Update Profile  </Link>
         <small className='text-center'>{a.EditBio}</small>
-          <h2 class="card-title text-center m-auto">Name: {a.name}</h2>
-          <p className='m-auto font-bold'>education:{a.education}</p>
-          <p className='m-auto'> <span className='font-bold'>about :</span> {a.about}</p>
-          <h2 class="card-title m-auto">email: {a.email}</h2>
+        <div class="overflow-x-auto">
+  <table class="table w-full">
+ 
+
+    <tbody>
+  
+      <tr>
+ 
+      <td></td>
+   
+      </tr>
+      <tr>
+ 
+        <td>Name: {a.name}</td>
+   
+      </tr>
+
+      <tr>
+     
+        <td>education:{a.education}</td>
+
+      </tr>
+ 
+      <tr>
+      <td>email: {a.email}</td>
+        
+      </tr>
+      <tr>
+      <td></td>
+        
+      </tr>
+   
+    </tbody>
+  </table>
+  <h5>about {a.about}</h5>
+</div>
           <div className="dispaly-none"> 
           <Dashboard  key={a._id} a={a}></Dashboard>
              </div>

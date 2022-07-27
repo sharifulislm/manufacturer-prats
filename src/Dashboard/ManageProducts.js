@@ -7,7 +7,7 @@ import ProductRow from './ProductRow';
 const ManageProducts = () => {
     // const [deleteingprosucts ,setDeleteingProducts]= useState([]);
     const [ serviceS , setService] = useState(null);
-    const {data: service, isLoading, refetch} = useQuery('service', ()=> fetch('http://localhost:5000/service' , {
+    const {data: service, isLoading, refetch} = useQuery('service', ()=> fetch('https://rocky-thicket-49136.herokuapp.com/service' , {
       headers: {
           authorization: `Bearer ${localStorage.getItem('accessToken')}`
       }

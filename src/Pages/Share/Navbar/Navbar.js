@@ -19,7 +19,7 @@ const Navbar = () => {
   const menuItems = <> 
               <li><Link to="/">Home</Link></li>
               <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/review">Review</Link></li>
+              <li><Link to="/AllReveiw">Review</Link></li>
               <li><Link to="/contact">Contact</Link></li>
         
               <li><Link to="/dashbord/Profiles">Dashboard</Link></li>
@@ -35,7 +35,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-zinc-100 mb-2">
+        <div className="navbar bg-zinc-100 sticky ">
         <div className="navbar">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-ghost lg:hidden">

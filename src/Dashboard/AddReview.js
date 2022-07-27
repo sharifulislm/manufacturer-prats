@@ -7,6 +7,7 @@ import auth from '../firebase.init';
 const AddReview = () => {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    console.log(rating);
 
 
 
@@ -18,13 +19,12 @@ const AddReview = () => {
             name:user.displayName,
             rating:rating,
             photoURL:user.photoURL,
-            product:event.target.product.value,
-            revice:event.target.revice.value,
+        
             description:event.target.description.value
           
             
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://rocky-thicket-49136.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

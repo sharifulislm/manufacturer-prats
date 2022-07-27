@@ -14,7 +14,7 @@ const AddProduct = () => {
           
             
         }
-        fetch('http://localhost:5000/addproduct', {
+        fetch('https://rocky-thicket-49136.herokuapp.com/addproduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -27,9 +27,9 @@ const AddProduct = () => {
         .then(data =>{
             if(data){
                 toast.success('Doctor added successfully');
-                event.target.reset();
+                event.target.reset(); 
+            
             }
-          
     })
         
     }
@@ -37,7 +37,6 @@ const AddProduct = () => {
     return (
         <div>
                <form className='' onSubmit={handleaddProducts}>
-        
                   <input className='input mb-2 input-bordered w-full max-w-xs' type="text" name='name' placeholder='name' />
                   <br/>
                   <input className='input mb-2 input-bordered w-full max-w-xs' type="text" name='price' placeholder='price' />
@@ -48,7 +47,6 @@ const AddProduct = () => {
                   <br/>
                   <textarea className='input mb-2 input-bordered w-full max-w-xs' type="text"  name='description' placeholder='description' />
                   <br/>
-                  
                   <input className="btn btn-accent w-full max-w-xs  " type="submit" value="Add Product"/>
                 
               </form>
