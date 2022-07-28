@@ -47,9 +47,13 @@ const AddReview = () => {
 
     return (
         <div>
-   <h1 className='text-xl text-center mb-3'> Add your Review {user.displayName}</h1>
+   <h1 className='text-xl text-center  mb-3'> <small className='font-bold text-xl '>Add your Review:</small>  {user.displayName}</h1>
 
-   <div className="star-rating">
+   
+
+      <div className='w-3/4 p-8 m-auto border  rounded-xl'>
+
+      <div className="star-rating text-center mb-3">
         {[...Array(5)].map((star, index) => {
           index += 1;
           return (
@@ -67,16 +71,18 @@ const AddReview = () => {
         })}
       </div>
 
-        <form className='' onSubmit={handlereview}>
+      <form className=' mb-20' onSubmit={handlereview} >
  
-        <input className='input mb-2 input-bordered w-full max-w-xs' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
-         <br></br>
-           <textarea className='input mb-2 input-bordered w-full max-w-xs m-4' type="text"  name='description' placeholder='feedback' />
-           <br/>
-           
-           <input className="btn btn-accent w-full max-w-xs  " type="submit" value="Add Review"/>
-         
-       </form>
+ <input className='input mb-2 input-bordered w-full' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
+
+    <textarea className='input pb-20 input-bordered w-full  ' type="text"  name='description' placeholder='feedback' />
+   
+    
+    <input className="btn btn-accent w-full   " type="submit" value="Add Review"/>
+  
+</form>
+
+      </div>
      
  </div>
     );
