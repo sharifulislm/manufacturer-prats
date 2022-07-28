@@ -32,6 +32,7 @@ import NotFound from './Pages/NotFound';
 import Banner from './Pages/Home/Benner/Banner';
 import ShowAllreveiw from './Pages/Home/Reveiws/AllReveiw/ShowAllreveiw';
 import AllReveiw from './Pages/Home/Reveiws/AllReveiw/AllReveiw';
+import Navbars from './Pages/Share/Navbar/Navbars';
 // import StarRating from './Dashboard/StarRating';
 // import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 
@@ -41,6 +42,7 @@ import AllReveiw from './Pages/Home/Reveiws/AllReveiw/AllReveiw';
 function App() {
   return (
     <div className="">
+      <Navbars></Navbars>
  <Navbar></Navbar>
 
 
