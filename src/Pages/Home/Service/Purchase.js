@@ -41,6 +41,7 @@ const handlePlaceOrder = event => {
     event.preventDefault();
     const order = {
         name:user.displayName,
+        product:name,
         email:user.email,
         sericeId: serviceId,
         price:totalPrice,

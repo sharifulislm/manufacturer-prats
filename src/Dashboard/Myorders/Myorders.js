@@ -18,16 +18,17 @@ const [order] =useMyorder([])
         <div class="overflow-x-auto">
 <table class="table w-full">
 
-<thead>
+<thead className='font-bold bg-teal-500'>
   <tr>
     <th>Order</th>
-    <th>Name</th>
-    <th>Address</th>
+    <th>Product Name</th>
+    <th>Transaction id:</th>
   
     <th>quantity </th>
-    <th> Phone</th>
-    <th> Total Price</th>
+    <th>Status</th>
+    {/* <th> Total Price</th> */}
     {/* <th> email</th> */}
+    <th>Payment </th>
     <th>Payment </th>
   </tr>
 </thead>
@@ -36,19 +37,28 @@ const [order] =useMyorder([])
         order.map((a, index) => 
             <tr key={a._id}>
             <th>{index + 1}</th>
-            <th>{a.name}</th>
-            <td>{a.address}</td>
+            <th>{a.product}</th>
+            <td className='text-success'>{a.transactionId}
+            {(a.price && !a.paid) && <span className='text-success font-bold'> Unpaid</span>}
+            </td>
             <td>{a.quantity}</td>
-            <td>{a.phone}</td>
+            <td>       {(a.price && a.paid) && <div>
+                                    <p><span className='text-success'>Paid</span> </p>
+                                  
+                                </div> }
+                                
+                                {(a.price && !a.paid) && <span className='text-success font-bold'> Unpaid</span>}
+
+                                </td>
             <td>{a.price}</td>
             {/* <td>{a.email}</td> */}
             {/* <td><button>delete</button></td> */}
-            
+            <td>
             {(a.price && !a.paid) && <Link to={`/dashbord/Payment/${a._id}`}><button className='btn btn-xs btn-success mt-3'>pay</button></Link>}
             {(a.price && a.paid) && <div>
-                                    <p><span className='text-success'>Paid</span><Link className='text-success pl-3 font-bold ' to="/dashbord/addreview">Review</Link> </p>
-                                    <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
-                                </div>}
+                                    <p><Link className='btn btn-xs btn-primary mt-3 text-white pl-3 font-bold ' to="/dashbord/addreview"> Review</Link> </p>
+                                  
+                                </div>}</td>
           </tr>
             )
             

@@ -51,9 +51,11 @@ const AddReview = () => {
 
    
 
-      <div className='w-3/4 p-8 m-auto border  rounded-xl'>
-
+      <div className='w-3/4 p-8 m-auto border ring-2 rounded-xl'>
+      <h6 className='text-center'>  Your Ratings</h6>
       <div className="star-rating text-center mb-3">
+   
+
         {[...Array(5)].map((star, index) => {
           index += 1;
           return (
@@ -71,14 +73,14 @@ const AddReview = () => {
         })}
       </div>
 
-      <form className=' mb-20' onSubmit={handlereview} >
- 
- <input className='input mb-2 input-bordered w-full' type="text" value={user?.displayName}  name='name' placeholder='name' required readOnly/>
-
-    <textarea className='input pb-20 input-bordered w-full  ' type="text"  name='description' placeholder='feedback' />
+      <form className=' mb-10' onSubmit={handlereview} >
+ <h6>Your Name :</h6>
+ <input className='input mb-2 input-bordered w-full' type="text" value={user?.displayName}  name='name' placeholder='' required readOnly/>
+  <h6>Your Review :</h6>
+    <textarea className='input pb-20 input-bordered w-full  ' type="text"  name='description' placeholder='' />
    
     
-    <input className="btn btn-accent w-full   " type="submit" value="Add Review"/>
+    <input className="btn btn-accent w-full mt-12   " type="submit" value="Add Review"/>
   
 </form>
 
