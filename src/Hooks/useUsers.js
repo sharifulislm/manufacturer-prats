@@ -5,6 +5,7 @@ import auth from '../firebase.init';
 const useUsers = () => {
     const [users,setUsers]=useState([]);
     const [user] = useAuthState(auth);
+
   
   useEffect(() => {
   if(user){

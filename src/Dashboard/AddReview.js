@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
+
 // import StarRating from './StarRating';
 
 const AddReview = () => {
@@ -11,8 +13,10 @@ const AddReview = () => {
 
 
 
-    const[user]=useAuthState(auth)
-    console.log(user.photoURL);
+    const [user] = useAuthState(auth);
+    console.log(user.displayName);
+
+  
     const handlereview = event => { 
         event.preventDefault();
         const Products = {
