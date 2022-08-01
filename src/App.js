@@ -13,7 +13,7 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Dashboard from './Dashboard/Dashboard';
 import Myorders from './Dashboard/Myorders/Myorders';
 import Makeadmin from './Dashboard/Makeadmin';
-import MyProfile from './Dashboard/MyProfile';
+// import MyProfile from './Dashboard/MyProfile';
 import Allusers from './Dashboard/Allusers';
 import AddProduct from './Dashboard/AddProduct';
 import ManageProducts from './Dashboard/ManageProducts';
@@ -59,7 +59,7 @@ function App() {
 
 <Route path='dashbord' element={<RequireAuth><Dashboard/> </RequireAuth> }>
 
-<Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+{/* <Route path='myprofile' element={<MyProfile></MyProfile>}></Route> */}
 <Route path='addreview' element={<AddReview></AddReview>}></Route>
 <Route path='myorders' element={<RequireAuth><Myorders></Myorders></RequireAuth>}></Route>
 <Route path='makeadmin' element={<RequireAuth><Makeadmin></Makeadmin></RequireAuth>}></Route>

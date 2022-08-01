@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useMyorder from '../../../Hooks/useMyorder';
+import img from '../../../Imge/download (3).jfif';
 import './navbar.css';
 
 const Navbars = () => {
@@ -32,7 +33,7 @@ const Navbars = () => {
             <label tabindex="0" class="btn  btn-ghost btn-circle avatar">
        
        <div class="w-10  rounded-full sm:visible invisible">
-         <img className='w-full' src={user?.photoURL} />
+         <img className='w-full' src={user?.photoURL || img} />
        </div>
      </label>
          </>
@@ -46,7 +47,7 @@ const Navbars = () => {
             <label tabindex="0" class="btn  btn-ghost btn-circle avatar">
        
        <div class="w-20  rounded-full sm:visible invisible m-auto">
-         <img className='w-full' src={user?.photoURL} />
+         <img className='w-full' src={user?.photoURL || img} />
        </div>
      </label>
          </>

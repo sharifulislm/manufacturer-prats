@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useUsers from '../Hooks/useUsers';
 import Dashboard from './Dashboard';
+import photo from '../Imge/download (3).jfif';
 import './profile.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import UpdateProfile from './UpdateProfile';
 
 const Profile = () => {
   const[users]=useUsers([]);
-  
+  const [user] = useAuthState(auth);
+  const EmptySpace = <small className=''>Empty Space</small>;
   
     // const{photoURL,name,email,education,about}=user;
     // console.log(name);
@@ -21,14 +26,18 @@ const Profile = () => {
         <figure>
         <div class="avatar">
   <div class="w-36 mt-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={a?.photoURL || a?.photoURLs} />
+    <img src={user.photoURL|| a?.photoURL ||photo} />
   </div>
 </div>
 
         </figure>
         <div class="card-body">
-     
-        <Link className='text-center text-blue-700 font-bold' to="/dashbord/myprofile">Update Profile  </Link>
+        <label for="my-modal-7" class="text-center text-blue-700 font-bold">Update Profile 
+  
+        </label>
+        <input type="checkbox" id="my-modal-7" class="modal-toggle" />
+        <UpdateProfile></UpdateProfile>
+
         <small className='text-center'>{a.EditBio}</small>
         <div class="overflow-x-auto">
   <table class="table w-full">
@@ -41,30 +50,44 @@ const Profile = () => {
       <td></td>
    
       </tr>
-      <tr>
+      <tr >
  
-        <td>Name: {a.name}</td>
+        <td className='border text-xl'><small className='font-bold text-xl'>Name:</small>  {a.name ||EmptySpace}</td>
+        <td className='border text-xl'><small className='font-bold text-xl'>Education: </small> {a.education ||EmptySpace}</td>
    
       </tr>
 
       <tr>
      
-        <td>education:{a.education}</td>
+     
 
       </tr>
  
-      <tr>
-      <td>email: {a.email}</td>
+      <tr >
+      <td className='border text-xl'><small className='font-bold text-xl'>email:</small> {a.email ||EmptySpace}</td>
+      <td className='border text-xl'><small className='font-bold text-xl'>role: </small>  {a.role ||EmptySpace}</td>
+        
+      </tr>
+      <tr >
+      <td className='border text-xl'><small className='font-bold text-xl'>University:</small> {a.University ||EmptySpace}</td>
+      <td className='border text-xl'><small className='font-bold text-xl'>Profession: </small>  {a.Profession || EmptySpace}</td>
+        
+      </tr>
+      <tr className='border'>
+      <div className='h-auto p-4 text-xl' >
+     {a.about||EmptySpace}
+      </div>
         
       </tr>
       <tr>
-      <td></td>
-        
+        <td>
+     
+        </td>
       </tr>
    
     </tbody>
   </table>
-  <h5>about {a.about}</h5>
+ 
 </div>
           <div className="dispaly-none"> 
           <Dashboard  key={a._id} a={a}></Dashboard>
