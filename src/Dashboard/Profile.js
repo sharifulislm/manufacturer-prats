@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import useUsers from '../Hooks/useUsers';
 import Dashboard from './Dashboard';
 import photo from '../Imge/download (3).jfif';
@@ -11,6 +11,8 @@ import UpdateProfile from './UpdateProfile';
 const Profile = () => {
   const[users]=useUsers([]);
   const [user] = useAuthState(auth);
+ console.log(user.photoURL);
+ console.log(user.displayName);
   const EmptySpace = <small className=''>Empty Space</small>;
   
     // const{photoURL,name,email,education,about}=user;

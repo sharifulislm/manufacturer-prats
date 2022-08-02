@@ -10,6 +10,7 @@ import Purchase from './Pages/Home/Service/Purchase';
 import Navbar from './Pages/Share/Navbar/Navbar';
 import { ToastContainer} from 'react-toastify';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import RequireAdmin from './Pages/RequireAdmin/RequireAdmin';
 import Dashboard from './Dashboard/Dashboard';
 import Myorders from './Dashboard/Myorders/Myorders';
 import Makeadmin from './Dashboard/Makeadmin';
@@ -29,7 +30,7 @@ import Payment from './Dashboard/Payment/Payment';
 import Blog from './Pages/Home/Blog/Blog';
 // import RequireNurmaluser from './Pages/RequireAuth/RequireNurmaluser';
 import NotFound from './Pages/NotFound';
-import Banner from './Pages/Home/Benner/Banner';
+// import Banner from './Pages/Home/Benner/Banner';
 import ShowAllreveiw from './Pages/Home/Reveiws/AllReveiw/ShowAllreveiw';
 import AllReveiw from './Pages/Home/Reveiws/AllReveiw/AllReveiw';
 import Navbars from './Pages/Share/Navbar/Navbars';
@@ -62,11 +63,11 @@ function App() {
 {/* <Route path='myprofile' element={<MyProfile></MyProfile>}></Route> */}
 <Route path='addreview' element={<AddReview></AddReview>}></Route>
 <Route path='myorders' element={<RequireAuth><Myorders></Myorders></RequireAuth>}></Route>
-<Route path='makeadmin' element={<RequireAuth><Makeadmin></Makeadmin></RequireAuth>}></Route>
-<Route path='allusers' element={<RequireAuth><Allusers></Allusers></RequireAuth>}></Route>
-<Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
-<Route path='manageorder' element={<ManageOrdders></ManageOrdders>}></Route>
-<Route path='ManageProducts' element={<ManageProducts></ManageProducts>}></Route>
+<Route path='makeadmin' element={<RequireAuth> <RequireAdmin> <Makeadmin></Makeadmin></RequireAdmin> </RequireAuth>}></Route>
+<Route path='allusers' element={<RequireAuth><RequireAdmin> <Allusers></Allusers> </RequireAdmin></RequireAuth>}></Route>
+<Route path='addproduct' element={<RequireAuth> <RequireAdmin>   <AddProduct></AddProduct></RequireAdmin>  </RequireAuth>}></Route>
+<Route path='manageorder' element={<RequireAuth> <RequireAdmin> <ManageOrdders></ManageOrdders></RequireAdmin> </RequireAuth> }></Route>
+<Route path='ManageProducts' element={ <RequireAuth> <RequireAdmin><ManageProducts></ManageProducts> </RequireAdmin> </RequireAuth>}></Route>
 <Route path='Profiles' element={<Profile></Profile>}></Route>
 <Route path='Payment/:id' element={<Payment></Payment>}></Route>
 

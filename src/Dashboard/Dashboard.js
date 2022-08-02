@@ -33,27 +33,35 @@ const Dashboard = ({a}) => {
         <div class="drawer-side">
           <label for="my-drawer-2" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-      
-            <li className=''><Link to="/dashbord/Profiles">Profile 
           
-         </Link></li>
+     {
+      user && !admin && 
       <>
-          
-                      {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
-                      <li>
-                      <Link to="/dashbord/myorders">  My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
-                      <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
-          </>
+      <li className=''><Link to="/dashbord/Profiles">Profile 
+    
+   </Link></li>
+
+    
+                {/* <li><Link to="/dashbord/myorders">My Orders <span className='text-blue-500'>({order.length})</span></Link></li> */}
+                <li>
+                <Link to="/dashbord/myorders">  My Orders <span class="indicator-item badge badge-secondary m-0 p-1">{order.length}</span> </Link></li>
+                <li><Link to="/dashbord/addreview">Add Reviews</Link></li>
+    </>
+     }
       
             
-    
-         <>
-         <li><Link to="/dashbord/makeadmin">Make Admin {admin.length}</Link></li>
-         <li><Link to="/dashbord/addproduct">add product {admin.length}</Link></li>
-         <li><Link to="/dashbord/manageorder">Manage Orders {admin.length}</Link></li>
-         <li><Link to="/dashbord/ManageProducts">Manage Products {admin.length}</Link></li>
-        
-        </>
+    {admin && user && 
+   <>
+   <li><Link to="/dashbord/makeadmin">Make Admin {admin.length}</Link></li>
+   <li><Link to="/dashbord/addproduct">add product {admin.length}</Link></li>
+   <li><Link to="/dashbord/manageorder">Manage Orders {admin.length}</Link></li>
+   <li><Link to="/dashbord/ManageProducts">Manage Products {admin.length}</Link></li>
+  
+
+    </>
+
+    }
+      
    
           </ul>
         

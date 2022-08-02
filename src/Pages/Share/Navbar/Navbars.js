@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useAdmin from '../../../Hooks/useAdmin';
 import useMyorder from '../../../Hooks/useMyorder';
 import img from '../../../Imge/download (3).jfif';
 import './navbar.css';
@@ -10,6 +11,8 @@ import './navbar.css';
 const Navbars = () => {
   const [order] =useMyorder([])
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user)
+
     const Logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
@@ -58,8 +61,11 @@ const Navbars = () => {
         <li className=' '>
         <li className='font-bold'><Link to="/dashbord/Profiles">Dashboard</Link></li>
         </li>
-        <li className=' ml-10 font-bold'>
-                      <Link to="/dashbord/myorders">  My Orders <span class="indicator-item badge badge-secondary ">{order.length}</span> </Link></li>
+     
+        { !admin &&
+             <li className=' ml-10 font-bold'>
+ <Link to="/dashbord/myorders">  My Orders <span class="indicator-item badge badge-secondary ">{order.length}</span> </Link></li>
+        } 
         <li className='m-auto font-bold'><a onClick={Logout}>Logout</a></li>
       </ul>
 
