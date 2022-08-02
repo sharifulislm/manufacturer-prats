@@ -13,7 +13,7 @@ const Profile = () => {
   const [user] = useAuthState(auth);
  console.log(user.photoURL);
  console.log(user.displayName);
-  const EmptySpace = <small className=''>Empty Space</small>;
+  const EmptySpace = <small className=''> ----------</small>;
   
     // const{photoURL,name,email,education,about}=user;
     // console.log(name);
