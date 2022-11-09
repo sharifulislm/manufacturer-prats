@@ -10,7 +10,7 @@ const ProductRow = ({index,service,setService,refetch}) => {
       const proceed = window.confirm('Are you sure you want to delete?');
       if(proceed){
           console.log('deleting user with id, ', _id);
-          const url = `https://rocky-thicket-49136.herokuapp.com/service/${_id}`;
+          const url = `http://localhost:5000/service/${_id}`;
           fetch(url, {
               method: 'DELETE',
               headers: {

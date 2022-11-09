@@ -16,7 +16,7 @@ const CheckoutForm = ({order}) => {
     console.log(price);
 
     useEffect(() => {
-        fetch('https://rocky-thicket-49136.herokuapp.com/create-order-payment', {
+        fetch('http://localhost:5000/create-order-payment', {
             method: 'POST',
             headers:{
                 'content-type': 'application/json',
@@ -86,7 +86,7 @@ const CheckoutForm = ({order}) => {
                 Order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://rocky-thicket-49136.herokuapp.com/payment/${_id}`, {
+            fetch(`http://localhost:5000/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -1,16 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Share/Loading/Loading';
+
 import './ShowService.css';
 
-const ShowServices = ({services}) => {
-    const { _id,description,name,images,price,quantity,availableQuantity} =services;
+const ShowServices = ({services,isLoading}) => {
 
-    const navitate =useNavigate();
-    const navigateServiceId = _id => {
-      navitate(`/purchase/${_id}`);
-    }
-    
-  
+
+  // const isLoggedIn = props.isLoggedIn;
+  const { _id,description,name,images,price,quantity,availableQuantity} =services;
+  const navitate =useNavigate();
+  const navigateServiceId = _id => {
+    navitate(`/purchase/${_id}`);
+  }
+  if(isLoading){
+    return <Loading></Loading>
+}
+
     return (
         <div class="card card-compact w-96 bg-base-100 shadow-xl mb-6">
         <figure><img className='' src={images} alt="Shoes" /></figure>
@@ -32,6 +38,7 @@ const ShowServices = ({services}) => {
         </div>
       </div>
     );
+  
 };
 
 export default ShowServices;

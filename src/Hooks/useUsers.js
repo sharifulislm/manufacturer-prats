@@ -5,16 +5,21 @@ import auth from '../firebase.init';
 const useUsers = () => {
     const [users,setUsers]=useState([]);
     const [user] = useAuthState(auth);
+    const [isLoading,setLoading]=useState(false);
 
   
   useEffect(() => {
   if(user){
-   fetch(`https://rocky-thicket-49136.herokuapp.com/users?email=${user.email}`)
+   fetch(`http://localhost:5000/users?email=${user.email}`)
    .then(res => res.json())
-   .then(data => setUsers(data));
+   .then(data =>{
+    setLoading(true);
+    setUsers(data)
+ 
+   });
   }
   },[user])
-    return [users];
+    return [users,isLoading];
 };
 
 export default useUsers;

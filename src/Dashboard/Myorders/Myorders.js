@@ -2,15 +2,19 @@ import React from 'react';
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 // import auth from '../../firebase.init';
-import useMyorder from '../../Hooks/useMyorder';
 import { AiFillDelete } from "react-icons/ai";
+import useMyorder from '../../Hooks/useMyorder';
+import Loading from '../../Pages/Share/Loading/Loading';
 // import Dashboard from '../Dashboard';
 
 
 
 const Myorders = () => {
 
-const [order] =useMyorder([])
+const [order,isLoading] =useMyorder([])
+if(isLoading){
+ return <Loading></Loading>
+}
 
     return (
         <div className='p-8 '>

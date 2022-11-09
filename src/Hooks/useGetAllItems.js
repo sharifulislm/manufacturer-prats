@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 
-const useProduct = serviceId => {
-    const[service,setService] =useState({})
-    const [isLoading,setLoading] = useState(true)
+const useGetAllItems = () => {
+    const [ service , setService] = useState([]);
+    const [Loading,setLoading] = useState(true)
     // console.log(service);
     
     
     const fethItems = () => {
-        const url = `http://localhost:5000/purchase/${serviceId}`;
-        fetch(url)
+        fetch("http://localhost:5000/service")
     
         .then((res) => res.json())
         .then((data) => {
@@ -20,8 +19,10 @@ const useProduct = serviceId => {
     useEffect(() => {
         fethItems()
     
-    } ,[serviceId])
-    return [service,isLoading];
+    } ,[])
+    return [service,Loading]
+
+
 };
 
-export default useProduct;
+export default useGetAllItems;

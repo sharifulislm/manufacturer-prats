@@ -1,6 +1,11 @@
 # parts manufacturer
- #parts manufacturer [Projects link](https://parts-manufacturer-fa964.web.app/).
 
+#parts manufacturer [Projects link](https://parts-manufacturer-fa964.web.app/).
+
+<h5> Admin email </h5>
+<p>test@gmail.com </p>
+<h5> password </h5>
+<p>123456 </p>
 
 <h1> Project Overview:</h1>
          
@@ -11,8 +16,6 @@
 - Admins can manage all the users, products, orders, reviews and also can make a user to admin.
 - Admins can delete any reviews, any orders that isn't paid yet and change the paid order status.
 
-
- 
 <h1> Technologies Used: </h1>
 
 - Languages: HTML, CSS, JavaScript;
@@ -27,8 +30,3 @@
 - Database: MongoDB;
 - Package Manager: Npm;
 - Payment: Stripe;
-
-
-
-
-

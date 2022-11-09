@@ -7,7 +7,7 @@ const AllReveiw = () => {
     // console.log(service);
     
     useEffect(() => {
-     fetch('https://rocky-thicket-49136.herokuapp.com/reviews')
+     fetch('http://localhost:5000/reviews')
      .then(res=> res.json())
      .then(data => setReveiw(data))
     

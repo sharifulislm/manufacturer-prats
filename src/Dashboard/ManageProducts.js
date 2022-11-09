@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Pages/Share/Loading/Loading';
 import ProductRow from './ProductRow';
@@ -7,7 +7,7 @@ import ProductRow from './ProductRow';
 const ManageProducts = () => {
     // const [deleteingprosucts ,setDeleteingProducts]= useState([]);
     const [ serviceS , setService] = useState(null);
-    const {data: service, isLoading, refetch} = useQuery('service', ()=> fetch('https://rocky-thicket-49136.herokuapp.com/service' , {
+    const {data: service, isLoading, refetch} = useQuery('service', ()=> fetch('http://localhost:5000/service' , {
       headers: {
           authorization: `Bearer ${localStorage.getItem('accessToken')}`
       }

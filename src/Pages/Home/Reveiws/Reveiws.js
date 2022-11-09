@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../../Share/Loading/Loading';
+// import Loading from '../../Share/Loading/Loading';
 import ShowReveiw from './ShowReveiw';
 
 const Reveiws = () => {
     const [ reveiw , setReveiw] = useState([]);
-    // console.log(service);
+const [isLoading,setLoading] = useState(true)
+// console.log(service);
+
+
+const fethItems = () => {
+    fetch("http://localhost:5000/reviews")
+
+    .then((res) => res.json())
+    .then((data) => {
+        setLoading(false);
+     setReveiw(data)
     
-    useEffect(() => {
-     fetch('https://rocky-thicket-49136.herokuapp.com/reviews')
-     .then(res=> res.json())
-     .then(data => setReveiw(data))
-    
-    
-    
-    } ,[])
-    
+    })
+}
+
+useEffect(() => {
+    fethItems()
+
+} ,[])
+if(isLoading){
+    return <Loading></Loading>
+}
+
 
     return (
         <div>
@@ -27,6 +41,7 @@ const Reveiws = () => {
             </div>
         </div>
     );
+ 
 };
 
 export default Reveiws;

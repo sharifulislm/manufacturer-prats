@@ -4,7 +4,7 @@ import Loading from '../Pages/Share/Loading/Loading';
 import Allusers from './Allusers';
 
 const Makeadmin = () => {
-    const{data: users,isLoading,refetch} =useQuery('users', () => fetch('https://rocky-thicket-49136.herokuapp.com/user',{
+    const{data: users,isLoading,refetch} =useQuery('users', () => fetch('http://localhost:5000/user',{
         method: 'GET',
         headers: {
           authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,7 +15,7 @@ const Makeadmin = () => {
     }
     return (
         <div>
-        <h2 className='text-2xl'> aLL USERS {users.length} </h2>
+        <h2 className='text-2xl'> aLL USERS {users?.length} </h2>
 
         <div class="overflow-x-auto">
 <table class="table w-full">
@@ -30,7 +30,7 @@ const Makeadmin = () => {
 </thead>
 <tbody>
 {
-users.map(user => <Allusers key={user._id} user={user} refetch={refetch}></Allusers>)
+users?.map(user => <Allusers key={user._id} user={user} refetch={refetch}></Allusers>)
 }
  
 
