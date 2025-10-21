@@ -24,6 +24,7 @@ useEffect(() => {
     fethItems()
 
 } ,[])
+
 if(isLoading){
     return <Loading></Loading>
 }

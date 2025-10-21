@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const useGetAllItems = () => {
     const [ service , setService] = useState([]);
-    const [Loading,setLoading] = useState(true)
+    const [isLoading,setLoading] = useState(true)
     // console.log(service);
     
     
@@ -20,7 +20,7 @@ const useGetAllItems = () => {
         fethItems()
     
     } ,[])
-    return [service,Loading]
+    return [service,isLoading]
 
 
 };

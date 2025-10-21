@@ -15,6 +15,7 @@ const CheckoutForm = ({order}) => {
     console.log(order);
     console.log(price);
 
+    // http://localhost:5000
     useEffect(() => {
         fetch('http://localhost:5000/create-order-payment', {
             method: 'POST',

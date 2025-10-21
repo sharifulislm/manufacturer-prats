@@ -6,10 +6,9 @@ import ShowServices from './ShowServices';
 
 const Service = () => {
 
-    // const [service,isLoading]=useGetAllItems()
 const [ service , setService] = useState([]);
 const [isLoading,setLoading] = useState(true)
-// console.log(service);
+
 
 
 const fethItems = () => {

@@ -1,53 +1,56 @@
 import React from 'react';
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { BsInstagram } from "react-icons/bs";
-import { BsWhatsapp } from "react-icons/bs";
+import { AiFillLinkedin, AiOutlineMail, AiOutlineTwitter } from "react-icons/ai";
+
+import { BsFacebook, BsGithub, BsWhatsapp } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+// import img from '../../../assets/logo/FullLogo_NoBuffer.jpg';
 
 
 const Footer = () => {
     return (
-        <footer className=" mt-5 bg-black text-white">
-<div className='footer p-10 justify-around'>
-      <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
-  </div> 
-  <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
-  </div> 
-  <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
-  </div>
-  <div>
-    <span className="footer-title">Legal</span> 
-
-  <a className="link link-hover "><FaTwitter></FaTwitter> Twitter</a>
-    <a className="link link-hover"><FaFacebook></FaFacebook> facebook</a>
-    <a className="link link-hover"><BsInstagram></BsInstagram> Instagram</a>
-    <a className="link link-hover"><BsWhatsapp></BsWhatsapp> Whatsapp</a>
-
+      <>
+      <footer id='footers' class="footer p-10 bg-black text-white">
  
 
-  </div>
-</div>
-  <footer className="footer footer-center p-4 text-white bg-teal-500  ">
-  <div>
-    <p>Copyright © 2022 - All right reserved </p>
-  </div>
+ <div>
+ <a href="https://www.linkedin.com/in/sharifulislm/?fbclid=IwAR26GK7V66g2pHPsxf65JHItfEFwQuHoNv7Ndj9xHwXsijO8rY4WzmgrLHs" target="_blank" rel="noreferrer" style={{color:"white"}} className="btn logostyles btn-ghost normal-case text-xl">Shariful</a>
+ <div class=" flex">
+<a className='text-white text-3xl p-2 rounded' href="https://www.facebook.com/shariful.islam.fb" target="_blank" rel="noreferrer"> <span className='text-white text-3xl p-2 rounded'>  <BsFacebook ></BsFacebook></span>  </a>
+   <a className='text-white text-3xl p-2 rounded' href="https://www.linkedin.com/in/sharifulislm/?fbclid=IwAR26GK7V66g2pHPsxf65JHItfEFwQuHoNv7Ndj9xHwXsijO8rY4WzmgrLHs" target="_blank" rel="noreferrer">  <span className='text-white text-3xl w-12 p-2 rounded'> <AiFillLinkedin></AiFillLinkedin> </span>  </a> 
+     <a className='text-white text-3xl p-2 rounded' href="https://github.com/sharifulislm" target="_blank" rel="noreferrer"> <span className='text-white text-3xl w-12 p-2 rounded'>  <BsGithub ></BsGithub></span> </a>
+ </div>
+ </div> 
+ <div className='text-left text-white'>
+ <span class="footer-title text-white">Social</span> 
+<ul className='text-white'>
+
+<li ><Link className='text-white' to="/">sharif.hossain.p87@gmail.com</Link></li>
+<li><Link className='text-white' to="/Service">+96551494820</Link></li>
+<li><Link className='text-white' to="/AllReveiw">Kuwait ,Mahboula (BLOCK-1)</Link></li>
+</ul>
+
+ </div> 
+ <div className=' '>
+   <span class="footer-title text-white">Social</span> 
+   <div class=" flex">
+<a className='text-white text-3xl p-2 rounded' href="https://api.whatsapp.com/send?phone+96551494820" target="_blank" rel="noreferrer"> <span className='text-white text-3xl p-2 rounded'>  <BsWhatsapp></BsWhatsapp></span>  </a>
+   <a className='text-white text-3xl p-2 rounded' href="mailto:sharif.hossain.p87@gmail.com " target="_blank" rel="noreferrer">  <span className='text-white text-3xl w-12 p-2 rounded'> <AiOutlineMail></AiOutlineMail> </span>  </a> 
+   <a className='text-white text-3xl p-2 rounded' href="https://twitter.com/sharif26630" target="_blank" rel="noreferrer">  <span className='text-white text-3xl w-12 p-2 rounded'> <AiOutlineTwitter></AiOutlineTwitter> </span>  </a> 
+ </div>
+ </div>
+ <div className='text-left'>
+ <span class="footer-title text-white">Social</span> 
+<ul className='invisible  md:visible '>
+<li className='mb-2'><Link className='text-white' to="/">HOME</Link></li>
+<li className='mb-2'><Link className='text-white' to="/Service">PROJECTS</Link></li>
+<li className='mb-2'><Link className='text-white' to="/AllReveiw">BLOG</Link></li>
+<li className='mb-2'><Link className='text-white' to="/ABOUT">ABOUT</Link></li>
+
+</ul>
+
+ </div> 
 </footer>
-  
-</footer>
+      </>
     );
 };
 
